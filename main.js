@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded',() => {
         const {renderer, scene, camera} = mindarThree;
 
         // create AR object
-        const geometry = new THREE.PlaneGemoetry(1,1);
+        const geometry = new THREE.PlaneGeometry(1,1);
         const material = new THREE.MeshBasicMaterial({color: 0x0000ff, tranparent: true, opacity: 0.5});
         const plane = new THREE.Mesh(geometry,material);
 
