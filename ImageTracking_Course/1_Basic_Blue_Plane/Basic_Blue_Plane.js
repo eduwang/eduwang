@@ -1,9 +1,11 @@
-const THREE = window.MINDAR.IMAGE.THREE;
+//const THREE = window.MINDAR.IMAGE.THREE;
+import * as THREE from 'three';
+import {MindARThree} from 'mindar-image-three';
 
 document.addEventListener('DOMContentLoaded',() => {
     const start = async () => {
         // initialize MindAR 
-        const mindarThree = new window.MINDAR.IMAGE.MindARThree({
+        const mindarThree = new MindARThree({
             container: document.body,
             imageTargetSrc: '../../applications/assets/targets/course-banner.mind'
         });
