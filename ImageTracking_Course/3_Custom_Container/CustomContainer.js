@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded',() => {
         //CamerMock 하는 코드를 미리 작성해두고 위에서 import해와서 반복적으로 사용 가능함
         mockWithVideo("../Rep_Image_forMock.mp4");
         //Video가 아니라 Image로도 가능함!
-        //mockWithImage("../../applications/assets/mock-videos/course-banner1.png")
+        //mockWithImage("../../Rep_Image.PNG")
 
         //CameraMock 코드를 import해와서 사용하기 때문에 아래 코드는 필요 없음!
         // navigator.mediaDevices.getUserMedia = () => {
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded',() => {
 
         // initialize MindAR 
         const mindarThree = new MindARThree({
-            container: document.body,
+            container: document.querySelector("#my-ar-container"),
             imageTargetSrc: '../Rep_Image.mind'
         });
         const {renderer, scene, camera} = mindarThree;
