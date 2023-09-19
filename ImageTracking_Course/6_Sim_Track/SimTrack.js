@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded',() => {
         const mindarThree = new window.MINDAR.IMAGE.MindARThree({
             container: document.body,
             imageTargetSrc: '../Target_for_Multiple_Track.mind',
+            maxTrack: 2,  //5번 예제와 비교하여 코드 한 줄 추가
           });
         const {renderer, scene, camera} = mindarThree;
 

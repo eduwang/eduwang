@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded',() => {
 
         // initialize MindAR 
         const mindarThree = new MindARThree({
-            container: document.querySelector("#my-ar-container"),
+            container: document.querySelector("#my-ar-container"), //mobile 환경 고려하면 굳이 container가 필요 없을 수도?!
             imageTargetSrc: '../Rep_Image.mind'
         });
         const {renderer, scene, camera} = mindarThree;

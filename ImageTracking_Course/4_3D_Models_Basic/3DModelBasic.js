@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded',() => {
 
         // initialize MindAR 
         const mindarThree = new window.MINDAR.IMAGE.MindARThree({
-            container: document.querySelector("#my-ar-container"),
+            container: document.body,
             imageTargetSrc: '../Rep_Image.mind',
           });
         const {renderer, scene, camera} = mindarThree;
