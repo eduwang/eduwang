@@ -1,0 +1,9 @@
+Fonts used in this design:
+
+Font: Parisienne
+Author: Astigmatic
+Url: https://fonts.google.com/specimen/Parisienne
+
+Font: Josefin Sans
+Author: Santiago Orozco
+Url: https://fonts.google.com/specimen/Josefin+Sans
