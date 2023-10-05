@@ -23,12 +23,13 @@ document.addEventListener('DOMContentLoaded',() => {
 
         Anchor.onTargetFound = () => {
             video.play();
+            video.loop = true;
         }
         Anchor.onTargetLost = () => {
             video.pause();
         }
         video.addEventListener("play", () => {
-            video.currentTime = 6;
+            video.currentTime = 0;
         })
 
         // start AR
