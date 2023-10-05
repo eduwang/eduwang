@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Make the body take up the entire viewport height */
+      margin: 0; /* Remove default body margin */
+    }
+
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columns */
+      gap: 10px; /* Gap between buttons */
+    }
+
+    .button {
+      position: relative; /* Required for positioning the tooltip */
+      width: 100%; /* Buttons take up the full width of their grid cell */
+      height: 50px; /* Fixed height for the buttons */
+      background-color: #007bff; /* Change to your desired button color */
+      color: #fff; /* Change to your desired text color */
+      border: none;
+      cursor: pointer;
+      font-size: 18px; /* Increase font size for larger text */
+      text-align: center;
+    }
+
+    /* Tooltip styles */
+    .button:hover::after {
+      content: attr(data-tooltip); /* Use the data-tooltip attribute as tooltip text */
+      position: absolute;
+      top: -30px; /* Adjust the distance above the button */
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #333;
+      color: #fff;
+      padding: 5px;
+      border-radius: 5px;
+      font-size: 14px;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    .button:hover::after {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="button-grid">
+    <button class="button" data-tooltip="Explanation 1">Button 1</button>
+    <button class="button" data-tooltip="Explanation 2">Button 2</button>
+    <button class="button" data-tooltip="Explanation 3">Button 3</button>
+    <button class="button" data-tooltip="Explanation 1">Button 1</button>
+    <button class="button" data-tooltip="Explanation 2">Button 2</button>
+    <button class="button" data-tooltip="Explanation 3">Button 3</button>
+    <button class="button" data-tooltip="Explanation 1">Button 1</button>
+    <button class="button" data-tooltip="Explanation 2">Button 2</button>
+    <button class="button" data-tooltip="Explanation 3">Button 3</button>
+    <!-- Add more buttons with different explanations as needed -->
+  </div>
+</body>
+</html>

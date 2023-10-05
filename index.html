@@ -7,6 +7,26 @@
       tr, td {
         padding: 10px;
       }
+      body{
+        margin: 2%;
+        padding: 2%;
+
+      }
+      .button {
+        width: 100%;
+        max-width: 800px; /* Adjust the max-width as needed */
+        padding: 10px;
+        margin: 5px;
+        text-align: center;
+        background-color: lightblue; /* Button background color */
+        color: black; /* Button text color */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none; /* Remove underline from anchor tag */
+        font-weight: normal;
+        font-size: 25px;
+      }
 
     </style>
   </head>
@@ -30,101 +50,7 @@
       <p>
         아래 링크에 접속해서 카메라가 켜지면, 위 이미지를 비춰보세요(From <a href = "https://www.udemy.com/course/introduction-to-web-ar-development/">HiuKim Yuen's course</a>)
       </p>
-      <!-- <div class="dropdown">
-        <button class="course-ex"><a href="./ImageTracking_Course/1_Basic_Blue_Plane/Basic_Blue_Plane.html">Example 1 - Simple Image Tracking</a>
-          <div class="course-ex-content">
-            <p>기본적인 Image Tracking</p>
-          </div>
-        </button>
-        <button class="course-ex"><a href="./ImageTracking_Course/2_Mock Webcam/MockWebcam.html">Example 2 - Camera Mock</a>
-          <div class="course-ex-content">
-            <p>카메라로 테스트하기 번거로운 경우에 이미지를 보여주는 영상을 대체하여 테스트
-            </p>
-          </div>
-        </button>
-        <button class="course-ex"><a href="./ImageTracking_Course/3_Custom_Container/CustomContainer.html">Example 3 - Custom Container</a>
-          <div class="course-ex-content">
-            <p>전체화면이 아니라 축소(custom contaniner)하여 테스트</p>
-          </div>
-        </button>
-        <button class="course-ex"><a href="./ImageTracking_Course/3_Custom_Container/CustomContainer.html">Example 3 - Custom Container</a>
-          <div class="course-ex-content">
-            <p>전체화면이 아니라 축소(custom contaniner)하여 테스트</p>
-          </div>
-        </button>
-        <button class="course-ex"><a href="./ImageTracking_Course/3_Custom_Container/CustomContainer.html">Example 3 - Custom Container</a>
-          <div class="course-ex-content">
-            <p>전체화면이 아니라 축소(custom contaniner)하여 테스트</p>
-          </div>
-        </button>
-        <button class="course-ex"><a href="./ImageTracking_Course/3_Custom_Container/CustomContainer.html">Example 3 - Custom Container</a>
-          <div class="course-ex-content">
-            <p>전체화면이 아니라 축소(custom contaniner)하여 테스트</p>
-          </div>
-        </button>
-        <button class="course-ex"><a href="./ImageTracking_Course/3_Custom_Container/CustomContainer.html">Example 3 - Custom Container</a>
-          <div class="course-ex-content">
-            <p>전체화면이 아니라 축소(custom contaniner)하여 테스트</p>
-          </div>
-        </button>
-        <button class="course-ex"><a href="./ImageTracking_Course/3_Custom_Container/CustomContainer.html">Example 3 - Custom Container</a>
-          <div class="course-ex-content">
-            <p>전체화면이 아니라 축소(custom contaniner)하여 테스트</p>
-          </div>
-        </button>
-      </div> -->
-
-      <ul>
-        <li><a href="./ImageTracking_Course/1_Basic_Blue_Plane/Basic_Blue_Plane.html">Example 1 - Simple Image Tracking</a>
-          <br>
-          기본적인 Image Tracking
-        </li>
-        <li><a href="./ImageTracking_Course/2_Mock Webcam/MockWebcam.html">Example 2 - Camera Mock</a>
-          <br>
-          카메라로 테스트하기 번거로운 경우에 이미지를 보여주는 영상을 대체하여 테스트
-        </li>
-        <li><a href="./ImageTracking_Course/3_Custom_Container/CustomContainer.html">Example 3 - Custom Container</a>
-          <br>
-          전체화면이 아니라 축소(custom contaniner)하여 테스트
-        </li>
-        <li><a href="./ImageTracking_Course/4_3D_Models_Basic/3DModelBasic.html">Example 4 - 3D Model Basic</a>
-          <br>
-          3D 모델 로드하기(기초)
-        </li>
-        <li><a href="./ImageTracking_Course/5_Multiple_Image_Track/MultipleImageTarget.html">Example 5 - Multiple Image Tracking</a>
-          <br>
-          Multipl Image Tracking: 동시에 tracking 되는 것은 아니고, 각각 하나의 target만 tracking
-        </li>
-        <li><a href="./ImageTracking_Course/6_Sim_Track/SimTrack.html">Example 6 - Simultaneous Multipl Image Tracking</a>
-          <br>이미지에 연결된 별개의 target을 동시에 tracking
-          <br>Example 5와 6에서 사용한 이미지: <a href = ./IMG_Multiple_Image_Track_1.PNG>1번</a>, <a href = ./IMG_Multiple_Image_Track_2.PNG>2번</a>
-        </li>
-        <li><a href="./ImageTracking_Course/7_Animation/Animations.html">Example 7 - 3D Model Animation</a>
-          <br>3D 모델 애니메이션
-        </li>
-        <li><a href="./ImageTracking_Course/8_Events_Handling/EventsHandling.html">Example 8 - Events Handling</a>
-          <br> Target Detection 성공 여부를 구분하는 기능, console log로 확인할 수 있음
-        </li>
-        <li><a href="./ImageTracking_Course/9_AudioContents/AudioContents.html">Example 9 - Audio Contents</a>
-          <br>오브젝트와 함께 배경음악이 재생됨, 공간음향이 지원되어 오브젝트에 가까이 가면 소리가 커짐
-        </li>
-        <li><a href="./ImageTracking_Course/10_UI/UI_Example.html">Example 10 - User Interaction</a>
-          <br>오브젝트를 클릭 또는 터치하면 다른 소리가 재생됨 
-        </li>
-        <li><a href="./ImageTracking_Course/11_VideoPlayer/VideoPlayer.html">Example 11 - Video Player</a>
-          <br> 비디오가 plane의 texture 역할을 함
-        </li>
-        <li><a href="./ImageTracking_Course/12_ChromaVideo/ChromaVideo.html">Example 12 - Chroma Video</a>
-          <br>그린 스크린에서 제작한 영상의 배경을 없애고 영상 재생
-        </li>
-        <li><a href="./ImageTracking_Course/13_CSSRender/CSSRender.html">Example 13 - CSS Renderer</a>
-          <br>CSS로 간단한 오브젝트 추가하기 
-        </li>
-        <li><a href="./ImageTracking_Course/14_Youtube_Player/YTBPlayer.html">Example 14 - Youtube Streaming</a>
-        <br>
-        Vimeo 플랫폼은 iframe 태그로 처리해도 증강된 비디오를 손으로 조작할 수 있어 간단하지만, Youtube 영상은 별도의 <a href="https://developers.google.com/youtube/iframe_api_reference?hl=ko">API</a>가 필요함. 
-        </li>
-      </ul>
+      <a class="button" href="./ImageTracking_Course/index_for_CourseExamples.html">Image Tracking Course Examples</a>
     </div>
 
     <br>
