@@ -14,3 +14,6 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+### bone 만들어서 전개도 및 bend 하는 방법 정리
+Object 만들기 -> Bone 만들기 -> Armature Deform with Empty Group -> 
