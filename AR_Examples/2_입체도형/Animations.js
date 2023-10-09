@@ -30,12 +30,20 @@ document.addEventListener('DOMContentLoaded',() => {
         const gltf3 = await loadGLTF('./cylinder_begin.gltf');
         gltf3.scene.scale.set(0.2, 0.2, 0.2);
         gltf3.scene.rotation.set(-Math.PI/2,0,Math.PI);
-        gltf3.scene.position.set(1, 0, 0.2);
+        gltf3.scene.position.set(1, 0, 0.2);  
+
+        //model 4 불러오기
+        const gltf4 = await loadGLTF('./cylinder_wall_32.gltf');
+        gltf4.scene.scale.set(0.2, 0.2, 0.2);
+        gltf4.scene.rotation.set(-Math.PI/2,0,Math.PI);
+        gltf4.scene.position.set(0, 1, 0.2);
 
         const Anchor = mindarThree.addAnchor(0);
         Anchor.group.add(gltf.scene); //model 1 추가
         Anchor.group.add(gltf2.scene); //model 2 추가
         Anchor.group.add(gltf3.scene); //model 2 추가
+        Anchor.group.add(gltf4.scene); //model 2 추가
+
 
         
         //gltf.animations
@@ -52,6 +60,10 @@ document.addEventListener('DOMContentLoaded',() => {
         const mixer3 = new THREE.AnimationMixer(gltf3.scene);
         const action3 = mixer3.clipAction(gltf3.animations[0]); //첫 번째 애니메이션 실행
         action3.play();
+
+        const mixer4 = new THREE.AnimationMixer(gltf4.scene);
+        const action4 = mixer4.clipAction(gltf4.animations[0]); //첫 번째 애니메이션 실행
+        action4.play();
 
 
         gltf.animations.forEach((animation, index) => {
@@ -70,6 +82,8 @@ document.addEventListener('DOMContentLoaded',() => {
             mixer.update(delta); //애니메이션 매 프레임마다 불러오기
             mixer2.update(delta); //애니메이션 매 프레임마다 불러오기
             mixer3.update(delta); //애니메이션 매 프레임마다 불러오기
+            mixer4.update(delta); //애니메이션 매 프레임마다 불러오기
+
 
             renderer.render(scene, camera);
         });
