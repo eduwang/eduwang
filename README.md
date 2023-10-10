@@ -16,4 +16,6 @@ Here are some ideas to get you started:
 -->
 
 ### bone 만들어서 전개도 및 bend 하는 방법 정리
-Object 만들기 -> Bone 만들기 -> Armature Deform with Empty Group -> 
+Object 만들기 -> Bone 만들기 -> Armature Deform with Empty Group -> Assign(Assign 쉽게 하는 방법 찾아보기)
+
+
