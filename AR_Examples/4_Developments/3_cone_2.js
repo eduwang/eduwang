@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded',() => {
         const light = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 1);
         scene.add(light);
         
-        const gltf = await loadGLTF('./gltfs/1_cube_fold_typeA.gltf');
-        gltf.scene.scale.set(0.2, 0.2, 0.2);
-        gltf.scene.position.set(0, 0, 0.5);
+        const gltf = await loadGLTF('./gltfs/3_cone_fold2.gltf');
+        gltf.scene.scale.set(0.3, 0.3, 0.3);
+        gltf.scene.position.set(0, -0.5, 0.5);
         gltf.scene.rotation.set(0, Math.PI/2, Math.PI/2);
 
 
