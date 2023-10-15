@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded',() => {
     const start = async () => {
         // initialize MindAR 
         const mindarThree = new window.MINDAR.FACE.MindARThree({
-            container: document.body,
+            container: document.getElementById('video')
         });
         const {renderer, scene, camera} = mindarThree;
 
