@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded',() => {
           });
         const {renderer, scene, camera} = mindarThree;
 
-        const video = await loadVideo('../../AR_Examples/Sources/Source_1_이차함수_평행이동.mp4');
+        const video = await loadVideo('../../AR_Examples/1_이차함수 그래프의 평행이동/videosource_exercise2.mp4');
         const texture = new THREE.VideoTexture(video);
 
         const geometry = new THREE.PlaneGeometry(2,2160/1920); //video가 1:1 비율이 아니므로... 높이는 영상 크기에 맞춰 나눠줌! 1은 이미지 크기에 대응함.

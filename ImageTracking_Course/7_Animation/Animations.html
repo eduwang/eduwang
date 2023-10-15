@@ -11,15 +11,24 @@
         height: 100%;
         overflow: hidden;
       }
+      #ref{
+        position: fixed;
+        z-index: 10;
+        right: 10px;
+        font-size: 10px;
+      }
+      .ref_link{
+        text-decoration: none; /* Remove underline from anchor tag */
+        color: black;
+      }
     </style>
   </head>
 
   <body>
-    <p>From
-        <a href="https://www.udemy.com/course/introduction-to-web-ar-development/">HiuKim Yuen's Class</a>
+    <!-- <h1>Hello World</h1>
+    <p>I'm hosted with GitHub Pages.</p> -->
+    <p id="ref">From
+        <a class="ref_link" href="https://www.udemy.com/course/introduction-to-web-ar-development/">HiuKim Yuen's Course</a>
     </p>
-    <!-- <div id="my-ar-container">
-
-    </div> -->
   </body>
 </html>

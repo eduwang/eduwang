@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Tracking Course Examples</title>
+    <style>
+        body {
+            margin: 1%;
+            padding: 1%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('../geometric.jpg');
+        }
+
+        .button-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: auto;
+        }
+
+        .button {
+            width: 85%;
+            max-width: 800px; /* Adjust the max-width as needed */
+            padding: 2%;
+            margin: 5px;
+            text-align: center;
+            background-color: lavender; /* Button background color */
+            color: black; /* Button text color */
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none; /* Remove underline from anchor tag */
+            font-weight: normal;
+            font-size: 25px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        .button-link{
+            width: 100%;
+            max-width: 800px; /* Adjust the max-width as needed */
+            padding: 10px;
+            margin: 5px;
+            text-align: center;
+            background-color: lightgray; /* Button background color */
+            color: black; /* Button text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none; /* Remove underline from anchor tag */
+            font-weight: normal;
+            font-size: 20px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        .button-content {
+            text-align: left;
+            font-size: 15px;
+            font-weight: normal;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .notice {
+            width: 60%;
+            max-width: 800px; /* Adjust the max-width as needed */
+            padding: 1%;
+            margin: 30px;
+            text-align: center;
+            background-color: lightgray; /* Button background color */
+            color: black; /* Button text color */
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none; /* Remove underline from anchor tag */
+            font-weight: normal;
+            font-size: 30px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="button-container">
+        <!-- Repeat this button code for a total of 20 buttons -->
+        <p class="notice" >**Face Tracking은 로딩 시간이 다소 걸릴 수 있음**
+        </p>
+        <a class="button" href="./1_Basic/basic.html">Example 1 - Basic Face Tracking
+            <p class="button-content">기본적인 Face Tracking</p>
+        </a>
+        <a class="button" href="./2_Import3D/3dModel.html">Example 2 - 3D Model
+            <p class="button-content"> 기본적인 3D Model Loading(glasses)</p>
+        </a>
+        <a class="button" href="./3_Occluders/Occuluders.html">Example 3 - Occluders
+            <p class="button-content">Occulusion 구현</p>
+
+        </a>
+        <a class="button" href="./4_FaceMesh/FaceMesh.html">Example 4 - Face Mesh
+            <p class="button-content">얼굴에 필터 씌우기, 효과는 face mesh 수정하여 직접 만들 수 있음
+            </p>
+        </a>
+        <a class="button" href="./5_SwitchCamera/SwitchCam.html">Example 5 - Switch Camera
+            <p class="button-content">카메라 전환: 효과는 Example 4와 같음(모바일 환경에서 실행하는 것을 추천함)</p>
+        </a>
+        <a class="button" href="./6_PhotoCapture/PhotoCapture.html">Example 6 - PhotoCapture
+            <p class="button-content">
+                이미지 캡처하여 기기에 저장
+            </p>
+        </a>
+        <a class="button" href="./7_WebShare/WebShare.html">Example 7 - Web Sharing
+            <p class="button-content">이미지 캡처 후 웹으로 공유하기, preview 이미지를 볼 수 있음
+                <br> * 환경과 브라우저에 따라 작동하지 않을 수도 있음
+            </p>
+        </a>
+
+
+        <!-- <a class="button" href="./8_Events_Handling/EventsHandling.html">Example 8 - Events Handling
+            <p class="button-content">Target Detection 성공 여부를 구분하는 기능, console log로 확인할 수 있음</p>
+        </a> -->
+
+
+        <!-- <a class="button" href="./9_AudioContents/AudioContents.html">Example 9 - Audio Contents
+            <p class="button-content">오브젝트와 함께 배경음악이 재생됨, 공간음향이 지원되어 오브젝트에 가까이 가면 소리가 커짐</p>
+        </a> -->
+        <!-- <a class="button" href="./10_UI/UI_Example.html">Example 10 - User Interaction
+            <p class="button-content">오브젝트를 클릭 또는 터치하면 다른 소리가 재생됨 </p>
+        </a>
+        <a class="button" href="./11_VideoPlayer/VideoPlayer.html">Example 11 - Video Player
+            <p class="button-content">비디오가 plane의 texture 역할을 함</p>
+        </a>
+        <a class="button" href="./12_ChromaVideo/ChromaVideo.html">Example 12 - Chroma Video
+            <p class="button-content">그린 스크린에서 제작한 영상의 배경을 없애고 영상 재생</p>
+        </a>
+        <a class="button" href="./13_CSSRender/CSSRender.html">Example 13 - CSS Renderer
+            <p class="button-content">CSS로 간단한 오브젝트 추가하기 </p>
+        </a>
+        <a class="button" href="./14_Youtube_Player/YTBPlayer.html">Example 14 - Youtube Streaming
+            <p class="button-content">
+                Vimeo 플랫폼은 iframe 태그로 처리해도 증강된 비디오를 손으로 조작할 수 있어 간단하지만, Youtube 영상은 별도의 API가 필요함
+            </p>
+        </a>
+        <a class="button-link" href="https://developers.google.com/youtube/iframe_api_reference?hl=ko">About Youtube iframe API</a> -->
+    </div>
+    
+</body>
+</html>
