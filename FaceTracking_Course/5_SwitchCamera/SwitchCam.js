@@ -20,8 +20,21 @@ document.addEventListener('DOMContentLoaded',() => {
 
         scene.add(faceMesh);
 
+        const camContainer = document.getElementById('video');
+        let switchCount = 0;
+
         document.querySelector("#switchCam").addEventListener("click", () => {
             mindarThree.switchCamera();
+            switchCount++;
+            console.log(switchCount);
+            if (switchCount % 2 === 1) {
+                camContainer.style.webkitTransform = 'scaleX(1)';
+                camContainer.style.transform = 'scaleX(1)';
+            } else{
+                camContainer.style.webkitTransform = 'scaleX(-1)';
+                camContainer.style.transform = 'scaleX(-1)';
+            }
+
           });
 
         // start AR
