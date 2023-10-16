@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Tracking Examples</title>
+    <!--폰트-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbit&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 1%;
+            padding: 1%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('../geometric.jpg');
+        }
+
+        .button-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: auto;
+        }
+
+        .button {
+            width: 85%;
+            max-width: 800px; /* Adjust the max-width as needed */
+            padding: 2%;
+            margin: 5px;
+            text-align: center;
+            background-color: #D3C9B5; /* Button background color */
+            color: black; /* Button text color */
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none; /* Remove underline from anchor tag */
+            font-weight: 1000;
+            font-size: 30px;
+        }
+        .button-link{
+            width: 50%;
+            max-width: 800px; /* Adjust the max-width as needed */
+            padding: 10px;
+            margin: 5px;
+            text-align: center;
+            background-color: lightgray; /* Button background color */
+            color: black; /* Button text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none; /* Remove underline from anchor tag */
+            font-weight: 1000;
+            font-size: 20px;
+        }
+        .button-content {
+            text-align: left;
+            font-size: 20px;
+            font-weight: normal;
+        }
+        #ew-container {
+            margin: 10px auto;
+            padding: 20px;
+            border: 2px solid #bcbcbc;
+            background-color: rgba(236, 236, 236, 0.5);
+            overflow: auto;
+        }
+        #ew-header {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 2px solid #bcbcbc;
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;   
+            font-size: 20px;   
+        }
+        #ew-content {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 2px solid #bcbcbc;
+            font-family: 'Gowun Dodum', sans-serif;
+
+        }
+        #ew-sidebar {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 2px solid #bcbcbc;
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+        #ew-footer {
+            padding: 20px;
+            border: 2px solid #bcbcbc;
+        }
+        #img-content{
+            max-width: 90%;
+        }
+        #additional-links{
+            text-decoration: none; /* Remove underline from anchor tag */
+            color: rgba(0, 0, 151, 0.801);
+            font-weight: 1000;
+        }
+        @media ( min-width: 481px ) {
+        #ew-container {
+            width: 940px;
+        }
+        #ew-content {
+            width: 580px;
+            float: left;
+        }
+        #ew-sidebar {
+            width: 260px;
+            float: right;
+        }
+        #ew-footer {
+            clear: both;
+        }
+
+        }
+
+        @media (max-width: 480px){
+        .button-content{
+            font-size: 12px;
+        }
+        #ew-header{
+            font-size: 15px;
+        }
+        .button{
+            font-size: 15px;
+        }
+        .button-link{
+            font-size: 12px;
+        }
+        }
+
+    </style>
+    
+</head>
+
+<body>
+    <div id="ew-container">
+        <div id="ew-header">
+            <h1>Image Tracking Examples</h1>
+            <p>*Face Tracking은 로딩 시간이 다소 걸릴 수 있음<br>
+            **iPhone Safari 브라우저(iOS+Safari)에서 전면 카메라 작동 문제는 해결 중</p>
+        </div>
+        <div class="button-container">
+            <a class="button" href="./1_Basic/basic.html">Example 1 - Basic Face Tracking
+                <p class="button-content">기본적인 Face Tracking</p>
+            </a>
+            <a class="button" href="./2_Import3D/3dModel.html">Example 2 - 3D Model
+                <p class="button-content"> 기본적인 3D Model Loading(glasses)</p>
+            </a>
+            <a class="button" href="./3_Occluders/Occuluders.html">Example 3 - Occluders
+                <p class="button-content">Occulusion 구현</p>
+
+            </a>
+            <a class="button" href="./4_FaceMesh/FaceMesh.html">Example 4 - Face Mesh
+                <p class="button-content">얼굴에 필터 씌우기, 효과는 face mesh 수정하여 직접 만들 수 있음
+                </p>
+            </a>
+            <a class="button" href="./5_SwitchCamera/SwitchCam.html">Example 5 - Switch Camera
+                <p class="button-content">카메라 전환: 효과는 Example 4와 같음(모바일 환경에서 실행하는 것을 추천함)</p>
+            </a>
+            <a class="button" href="./6_PhotoCapture/PhotoCapture.html">Example 6 - PhotoCapture
+                <p class="button-content">
+                    이미지 캡처하여 기기에 저장
+                </p>
+            </a>
+            <a class="button" href="./7_WebShare/WebShare.html">Example 7 - Web Sharing
+                <p class="button-content">이미지 캡처 후 웹으로 공유하기, preview 이미지를 볼 수 있음
+                    <br> * 환경과 브라우저에 따라 작동하지 않을 수도 있음
+                </p>
+            </a>
+        </div>
+    </div>
+    
+</body>
+</html>

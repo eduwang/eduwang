@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--폰트-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbit&display=swap" rel="stylesheet">
+    
+    <title>Image Tracking Course Examples</title>
+    <style>
+        body {
+            margin: 1%;
+            padding: 1%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('../geometric.jpg');
+        }
+
+        .button-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: auto;
+        }
+
+        .button {
+            width: 85%;
+            max-width: 800px; /* Adjust the max-width as needed */
+            padding: 2%;
+            margin: 5px;
+            text-align: center;
+            background-color: #D3C9B5; /* Button background color */
+            color: black; /* Button text color */
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none; /* Remove underline from anchor tag */
+            font-weight: 1000;
+            font-size: 30px;
+        }
+        .button-link{
+            width: 50%;
+            max-width: 800px; /* Adjust the max-width as needed */
+            padding: 10px;
+            margin: 5px;
+            text-align: center;
+            background-color: lightgray; /* Button background color */
+            color: black; /* Button text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none; /* Remove underline from anchor tag */
+            font-weight: 1000;
+            font-size: 20px;
+        }
+        .button-content {
+            text-align: left;
+            font-size: 20px;
+            font-weight: normal;
+        }
+        #ew-container {
+            margin: 10px auto;
+            padding: 20px;
+            border: 2px solid #bcbcbc;
+            background-color: rgba(236, 236, 236, 0.5);
+            overflow: auto;
+        }
+        #ew-header {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 2px solid #bcbcbc;
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;   
+            font-size: 20px;   
+        }
+        #ew-content {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 2px solid #bcbcbc;
+            font-family: 'Gowun Dodum', sans-serif;
+
+        }
+        #ew-sidebar {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 2px solid #bcbcbc;
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+        #ew-footer {
+            padding: 20px;
+            border: 2px solid #bcbcbc;
+        }
+        #img-content{
+            max-width: 90%;
+        }
+        #additional-links{
+            text-decoration: none; /* Remove underline from anchor tag */
+            color: rgba(0, 0, 151, 0.801);
+            font-weight: 1000;
+        }
+        @media ( min-width: 481px ) {
+        #ew-container {
+            width: 940px;
+        }
+        #ew-content {
+            width: 580px;
+            float: left;
+        }
+        #ew-sidebar {
+            width: 260px;
+            float: right;
+        }
+        #ew-footer {
+            clear: both;
+        }
+
+        }
+
+        @media (max-width: 480px){
+        .button-content{
+            font-size: 12px;
+        }
+        #ew-header{
+            font-size: 15px;
+        }
+        .button{
+            font-size: 15px;
+        }
+        .button-link{
+            font-size: 12px;
+        }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="ew-container">
+        <div id="ew-header">
+            <h1>Image Tracking Examples</h1>
+        </div>
+        <div class="button-container">
+            <!-- Repeat this button code for a total of 20 buttons -->
+            <a class="button" href="./1_Basic_Blue_Plane/Basic_Blue_Plane.html">Example 1 - Simple Image Tracking
+                <p class="button-content">기본적인 Image Tracking</p>
+            </a>
+            <a class="button" href="./2_Mock Webcam/MockWebcam.html">Example 2 - Camera Mock
+                <p class="button-content"> 카메라로 테스트하기 번거로운 경우에 이미지를 보여주는 영상을 대체하여 테스트</p>
+
+            </a>
+            <a class="button" href="./3_Custom_Container/CustomContainer.html">Example 3 - Custom Container
+                <p class="button-content">전체화면이 아니라 축소(custom contaniner)하여 테스트</p>
+
+            </a>
+            <a class="button" href="./4_3D_Models_Basic/3DModelBasic.html">Example 4 - 3D Model Basic
+                <p class="button-content">3D 모델 로드하기(기초)</p>
+            </a>
+            <a class="button" href="./5_Multiple_Image_Track/MultipleImageTarget.html">Example 5 - Multiple Image Tracking
+                <p class="button-content">Multipl Image Tracking: 동시에 tracking 되는 것은 아니고, 각각 하나의 target만 tracking</p>
+            </a>
+            <a class="button" href="./6_Sim_Track/SimTrack.html">Example 6 - Simultaneous Multipl Image Tracking
+                <p class="button-content">
+                    이미지에 연결된 별개의 target을 동시에 tracking
+                </p>
+            </a>
+            <a class="button-link" href = ./IMG_Multiple_Image_Track_1.PNG>Target 1 for Example 5 & 6</a> 
+            <a class="button-link" href = ./IMG_Multiple_Image_Track_2.PNG>Target 2 for Example 5 & 6</a>
+
+            <a class="button" href="./7_Animation/Animations.html">Example 7 - 3D Model Animation
+                <p class="button-content">3D 모델 애니메이션</p>
+            </a>
+            <a class="button" href="./8_Events_Handling/EventsHandling.html">Example 8 - Events Handling
+                <p class="button-content">Target Detection 성공 여부를 구분하는 기능, console log로 확인할 수 있음</p>
+            </a>
+            <a class="button" href="./9_AudioContents/AudioContents.html">Example 9 - Audio Contents
+                <p class="button-content">오브젝트와 함께 배경음악이 재생됨, 공간음향이 지원되어 오브젝트에 가까이 가면 소리가 커짐</p>
+            </a>
+            <a class="button" href="./10_UI/UI_Example.html">Example 10 - User Interaction
+                <p class="button-content">오브젝트를 클릭 또는 터치하면 다른 소리가 재생됨 </p>
+            </a>
+            <a class="button" href="./11_VideoPlayer/VideoPlayer.html">Example 11 - Video Player
+                <p class="button-content">비디오가 plane의 texture 역할을 함</p>
+            </a>
+            <a class="button" href="./12_ChromaVideo/ChromaVideo.html">Example 12 - Chroma Video
+                <p class="button-content">그린 스크린에서 제작한 영상의 배경을 없애고 영상 재생</p>
+            </a>
+            <a class="button" href="./13_CSSRender/CSSRender.html">Example 13 - CSS Renderer
+                <p class="button-content">CSS로 간단한 오브젝트 추가하기 </p>
+            </a>
+            <a class="button" href="./14_Youtube_Player/YTBPlayer.html">Example 14 - Youtube Streaming
+                <p class="button-content">
+                    Vimeo 플랫폼은 iframe 태그로 처리해도 증강된 비디오를 손으로 조작할 수 있어 간단하지만, Youtube 영상은 별도의 API가 필요함
+                </p>
+            </a>
+            <a class="button-link" href="https://developers.google.com/youtube/iframe_api_reference?hl=ko">About Youtube iframe API</a>
+        </div>
+    </div>
+    
+</body>
+</html>
