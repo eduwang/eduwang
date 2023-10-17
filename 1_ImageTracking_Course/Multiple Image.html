@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weclome to WebAR!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--폰트-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbit&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mohave:ital,wght@1,500&display=swap" rel="stylesheet">
+
+    <style>
+      .button {
+        width: 50%;
+        padding: 5px;
+        margin: 5px;
+        text-align: center;
+        background-color: rgb(218, 218, 218); /* Button background color */
+        color: black; /* Button text color */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none; /* Remove underline from anchor tag */
+        font-weight: normal;
+        font-size: 20px;
+        font-family: 'Orbit', sans-serif;
+      }
+      #body-bg {
+        background-image: url('../geometric.jpg'); /* Replace 'your-image.jpg' with the path to your image */
+        background-size: cover;
+      }
+      #ew-container {
+        margin: 10px auto;
+        padding: 20px;
+        border: 2px solid #bcbcbc;
+        background-color: rgba(236, 236, 236, 0.5);
+        overflow: auto;
+      }
+      #ew-header {
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 2px solid #bcbcbc;
+        text-align: center;
+        font-family: 'Orbitron', sans-serif;   
+        font-size: 30px;   
+      }
+      #ew-content {
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 2px solid #bcbcbc;
+        font-family: 'Gowun Dodum', sans-serif;
+
+      }
+      #ew-sidebar {
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 2px solid #bcbcbc;
+        font-family: 'Gowun Dodum', sans-serif;
+      }
+      #ew-footer {
+        padding: 20px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        border: 2px solid #bcbcbc;
+        font-family: 'Mohave', sans-serif;
+        text-align: right;
+      }
+      #img-content{
+        max-width: 49%;
+      }
+      #additional-links{
+        text-decoration: none; /* Remove underline from anchor tag */
+        color: rgba(0, 0, 151, 0.801);
+        font-weight: 1000;
+      }
+      @media ( min-width: 481px ) {
+        #ew-container {
+          width: 940px;
+        }
+        #ew-content {
+          width: 580px;
+          float: left;
+        }
+        #ew-sidebar {
+          width: 260px;
+          float: right;
+        }
+        #ew-footer {
+          clear: both;
+        }
+
+      }
+
+      @media (max-width: 480px){
+        .button {
+          font-size: 12px;
+        }
+        #ew-header{
+          font-size: 20px;
+        }
+        #ew-footer h3,p{
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+
+  <body id="body-bg">
+    <div id="ew-container">
+      <div id="ew-header">
+        <img id="img-content" src="./IMG_Multiple_Image_Track_1.PNG">
+        <img id="img-content" src="./IMG_Multiple_Image_Track_2.PNG">
+      </div>
+    </div>
+  </body>
+</html>
