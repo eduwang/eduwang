@@ -1,9 +1,12 @@
-const THREE = window.MINDAR.FACE.THREE;
+//const THREE = window.MINDAR.FACE.THREE;
+
+import * as THREE from 'three';
+import {MindARThree} from 'mindar-face-three';
 
 document.addEventListener('DOMContentLoaded',() => {
     const start = async () => {
         // initialize MindAR 
-        const mindarThree = new window.MINDAR.FACE.MindARThree({
+        const mindarThree = new MindARThree({
             container: document.getElementById('video')
         });
         const {renderer, scene, camera} = mindarThree;
