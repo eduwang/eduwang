@@ -1,58 +1,125 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <style>
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh; /* Make the body take up the entire viewport height */
-        margin: 0; /* Remove default body margin */
-    }
+  <head>
+    <title>Weclome to WebAR!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--폰트-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbit&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mohave:ital,wght@1,500&display=swap" rel="stylesheet">
 
-    .button-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    <style>
+      .button {
+        width: 80%;
+        padding: 1%;
+        margin: 5%;
+        text-align: center;
+        background-color: rgb(218, 218, 218); /* Button background color */
+        color: black; /* Button text color */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none; /* Remove underline from anchor tag */
+        font-weight: normal;
+        font-size: 50px;
+        font-family: 'Orbit', sans-serif;
+      }
+      #body-bg {
+        background-image: url('../../geometric.jpg'); /* Replace 'your-image.jpg' with the path to your image */
+        background-size: cover;
+      }
+      #ew-container {
+        margin: 10px auto;
+        padding: 20px;
+        border: 2px solid #bcbcbc;
+        background-color: rgba(236, 236, 236, 0.5);
         overflow: auto;
-    }
+      }
+      #ew-header {
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 2px solid #bcbcbc;
+        text-align: center;
+        font-family: 'Orbitron', sans-serif;   
+        font-size: 30px;   
+      }
+      #ew-content {
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 2px solid #bcbcbc;
+        font-family: 'Gowun Dodum', sans-serif;
 
-    .button {
-        width: 500px; /* Fixed width for the buttons */
-        height: 200px; /* Fixed height for the buttons */
-        background-color: lavender; /* Change to your desired button color */
-        color: black; /* Change to your desired text color */
-        border: none;
-        cursor: pointer;
-        margin: 20px; /* Increase margin for spacing */
-        font-size: 60px; /* Increase font size for larger text */
+      }
+      #ew-sidebar {
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 2px solid #bcbcbc;
+        font-family: 'Gowun Dodum', sans-serif;
+      }
+      #ew-footer {
+        padding: 20px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        border: 2px solid #bcbcbc;
+        font-family: 'Mohave', sans-serif;
+        text-align: right;
+      }
+      #img-content{
+        max-width: 70%;
+      }
+      #additional-links{
         text-decoration: none; /* Remove underline from anchor tag */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .button-source {
-        width: 500px; /* Fixed width for the buttons */
-        height: 200px; /* Fixed height for the buttons */
-        background-color: black; /* Change to your desired button color */
-        color: lightgoldenrodyellow; /* Change to your desired text color */
-        border: none;
-        cursor: pointer;
-        margin: 20px; /* Increase margin for spacing */
-        font-size: 60px; /* Increase font size for larger text */
-        text-decoration: none; /* Remove underline from anchor tag */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-  </style>
-</head>
-<body>
-  <div class="button-container">
-    <a class="button-source" href="./worksheet.pdf">학습지</a>
-    <a class="button" href="./exercise1.html">활동 2</a>
-    <a class="button" href="./exercise2.html">개념</a>
-    <a class="button" href="./exercise3.html">예제</a>
-  </div>
-</body>
+        color: rgba(0, 0, 151, 0.801);
+        font-weight: 1000;
+      }
+      @media ( min-width: 481px ) {
+        #ew-container {
+          width: 60%;
+        }
+        #ew-content {
+          width: 580px;
+          float: left;
+        }
+        #ew-sidebar {
+          width: 260px;
+          float: right;
+        }
+        #ew-footer {
+          clear: both;
+        }
+
+      }
+
+      @media (max-width: 480px){
+        .button {
+          font-size: 20px;
+        }
+        #ew-header{
+          font-size: 20px;
+        }
+        #ew-footer h3,p{
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+
+
+
+  <body>
+    <div id="ew-container">
+      <div id="ew-header">
+        <p>이차함수의 평행이동</p>
+        <p><a class="button" href="./worksheet.pdf">학습지</a></p>
+      </div>
+      <div id="ew-header">
+        <p><a class="button" href="./exercise1.html">활동 2</a></p>
+        <p><a class="button" href="./exercise2.html">개념</a></p>
+        <p><a class="button" href="./exercise3.html">예제</a></p>
+      </div>
+    </div>
+  </body>
 </html>
