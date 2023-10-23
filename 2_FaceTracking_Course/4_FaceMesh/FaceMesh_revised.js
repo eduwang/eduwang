@@ -1,6 +1,6 @@
+import { loadTexture } from "../../applications/libs/loader.js"
 import * as THREE from 'three';
 import { MindARThree } from 'mindar-face-three';
-import { loadGLTF } from "../../applications/libs/loader.js"
 
 
 const mindarThree = new MindARThree({
@@ -17,15 +17,13 @@ const {renderer, scene, camera} = mindarThree;
 const light = new THREE.HemisphereLight( 0xffffff, 0xbbbbff, 1);
 scene.add(light)
 
-//Loading 3D models
-const glasses = await loadGLTF('../../applications/assets/models/glasses1/scene.gltf');
+const faceMesh = mindarThree.addFaceMesh();
+const texture = await loadTexture("./FaceMesh_Sample3.png")
+faceMesh.material.map = texture;
+faceMesh.material.transparent = true;
+faceMesh.material.needsUpdate = true;
 
-//model scaling
-glasses.scene.scale.multiplyScalar(0.01);
-
-//making anchor
-const anchor = mindarThree.addAnchor(168); //nose에 위치하는 anchor
-anchor.group.add(glasses.scene); //THREE.Group
+scene.add(faceMesh);
 
 //start function
 const start = async() => {
