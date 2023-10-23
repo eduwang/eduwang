@@ -4,15 +4,18 @@
         <script type="importmap">
             {
             "imports": {
-                "three": "https://unpkg.com/three@0.153.0/build/three.module.js",
+                "three": "https://unpkg.com/three@0.132.0/build/three.module.js",
                 "three/addons/": "https://unpkg.com/three@0.153.0/examples/jsm/",
                 "mindar-face-three":"https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-face-three.prod.js"
                 }
             }
         </script>
-        <script src ="./basic_revised.js" type = "module"></script>
+        <script src ="./Occuluders_revised.js" type = "module"></script>
 
         <style>
+            body {
+            margin: 0;
+            }
             #ref{
                 position: fixed;
                 z-index: 10;
@@ -22,9 +25,6 @@
             .ref_link{
                 text-decoration: none; /* Remove underline from anchor tag */
                 color: black;
-            }
-            body {
-            margin: 0;
             }
             #container {
                 width: 100vw;

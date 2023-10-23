@@ -4,7 +4,7 @@
         <script type="importmap">
             {
             "imports": {
-                "three": "https://unpkg.com/three@0.153.0/build/three.module.js",
+                "three": "https://unpkg.com/three@0.132.0/build/three.module.js",
                 "three/addons/": "https://unpkg.com/three@0.153.0/examples/jsm/",
                 "mindar-face-three":"https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-face-three.prod.js"
                 }
@@ -15,6 +15,16 @@
         <style>
             body {
             margin: 0;
+            }
+            #ref{
+                position: fixed;
+                z-index: 10;
+                right: 10px;
+                font-size: 10px;
+            }
+            .ref_link{
+                text-decoration: none; /* Remove underline from anchor tag */
+                color: black;
             }
             #container {
                 width: 100vw;
@@ -84,6 +94,10 @@
         </style>
     </head>
   <body>
+    <p id="ref">From
+        <a class="ref_link" href="https://www.udemy.com/course/introduction-to-web-ar-development/">HiuKim Yuen's Course</a>
+    </p>
+
         <div id="container">
             <canvas data-engine="three.js r153" width="300" height="150" style="display: block;"></canvas>
             <div style="overflow: hidden;">

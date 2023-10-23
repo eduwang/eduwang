@@ -26,6 +26,23 @@ faceMesh.material.needsUpdate = true;
 
 scene.add(faceMesh);
 
+const camContainer = document.getElementById('video');
+let switchCount = 0;
+
+document.querySelector("#switchCam").addEventListener("click", () => {
+    mindarThree.switchCamera();
+    switchCount++;
+    console.log(switchCount);
+    if (switchCount % 2 === 1) {
+        container.style.webkitTransform = 'scaleX(1)';
+        container.style.transform = 'scaleX(1)';
+    } else{
+        container.style.webkitTransform = 'scaleX(-1)';
+        container.style.transform = 'scaleX(-1)';
+    }
+
+  });
+
 //start function
 const start = async() => {
     await mindarThree.start();
