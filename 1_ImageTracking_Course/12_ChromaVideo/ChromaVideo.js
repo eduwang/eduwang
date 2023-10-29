@@ -1,13 +1,13 @@
-import {loadGLTF, loadVideo} from '../../applications/libs/loader.js';
+import * as THREE from 'three';
+import {MindARThree} from 'mindar-image-three';
+import {loadVideo} from '../../applications/libs/loader.js';
 import {createChromaMaterial} from '../../applications/libs/chroma-video.js'
-
-const THREE = window.MINDAR.IMAGE.THREE;
 
 document.addEventListener('DOMContentLoaded',() => {
     const start = async () => {
 
         // initialize MindAR 
-        const mindarThree = new window.MINDAR.IMAGE.MindARThree({
+        const mindarThree = new MindARThree({
             container: document.body,
             imageTargetSrc: '../Rep_Image.mind',
           });

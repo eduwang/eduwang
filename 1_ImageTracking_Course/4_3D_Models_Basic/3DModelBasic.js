@@ -1,11 +1,11 @@
-const THREE = window.MINDAR.IMAGE.THREE;
+// const THREE = window.MINDAR.IMAGE.THREE;
 //import * as THREE from 'three';
 //import {MindARThree} from 'mindar-image-three';
 //import {mockWithVideo, mockWithImage} from '../../applications/libs/camera-mock.js'; 
 //import {GLTFLoader} from '../../applications/libs/three.js-r132/examples/jsm/loaders/GLTFLoader.js';
 
 //아래 코드를 간단하게 import하여 사용
-import {loadGLTF} from '../../applications/libs/loader.js';
+// import {loadGLTF} from '../../applications/libs/loader.js';
 // const loadGLTF = (path) => {
 //     return new Promise((resolve, reject) => {
 //         const loader = new GLTFLoader();
@@ -15,11 +15,15 @@ import {loadGLTF} from '../../applications/libs/loader.js';
 //     });
 // }
 
+import * as THREE from 'three';
+import {MindARThree} from 'mindar-image-three';
+import {loadGLTF} from '../../applications/libs/loader.js';
+
 document.addEventListener('DOMContentLoaded',() => {
     const start = async () => {
 
         // initialize MindAR 
-        const mindarThree = new window.MINDAR.IMAGE.MindARThree({
+        const mindarThree = new MindARThree({
             container: document.body,
             imageTargetSrc: '../Rep_Image.mind',
           });
