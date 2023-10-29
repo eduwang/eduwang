@@ -1,0 +1,11 @@
+Model Information:
+* title:	Groot dancing
+* source:	https://sketchfab.com/3d-models/groot-dancing-5d7c5687bba747aa8a1ebeb3af514e34
+* author:	Сhemaron (https://sketchfab.com/chemaron)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Groot dancing" (https://sketchfab.com/3d-models/groot-dancing-5d7c5687bba747aa8a1ebeb3af514e34) by Сhemaron (https://sketchfab.com/chemaron) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

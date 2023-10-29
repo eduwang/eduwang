@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weclome to WebAR!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--폰트-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbit&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mohave:ital,wght@1,500&display=swap" rel="stylesheet">
+
+    <style>
+      .button {
+        display: inline-block;
+        width: 30%;
+        padding: 5px;
+        margin-left: 1%;
+        margin-right: 1%;
+        margin-bottom: 2%;
+        text-align: center;
+        background-color: rgb(218, 218, 218); /* Button background color */
+        color: black; /* Button text color */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none; /* Remove underline from anchor tag */
+        font-weight: normal;
+        font-size: 20px;
+        font-family: 'Orbit', sans-serif;
+      }
+      #body-bg {
+        background-image: url('../geometric.jpg'); /* Replace 'your-image.jpg' with the path to your image */
+        background-size: cover;
+      }
+      #ew-container {
+        margin: 10px auto;
+        padding: 20px;
+        border: 2px solid #bcbcbc;
+        background-color: rgba(236, 236, 236, 0.5);
+        overflow: auto;
+      }
+      #ew-header {
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 2px solid #bcbcbc;
+        text-align: center;
+        font-family: 'Orbitron', sans-serif;   
+        font-size: 30px;   
+      }
+      #ew-content {
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 2px solid #bcbcbc;
+        font-family: 'Gowun Dodum', sans-serif;
+
+      }
+      #ew-sidebar {
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 2px solid #bcbcbc;
+        font-family: 'Gowun Dodum', sans-serif;
+      }
+      #ew-footer {
+        padding: 20px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+        border: 2px solid #bcbcbc;
+        font-family: 'Mohave', sans-serif;
+        text-align: right;
+      }
+      #img-content{
+        max-width: 70%;
+      }
+      #img-header{
+        width: 3%;
+      }
+      #additional-links{
+        text-decoration: none; /* Remove underline from anchor tag */
+        color: rgba(0, 0, 151, 0.801);
+        font-weight: 1000;
+      }
+      @media ( min-width: 481px ) {
+        #ew-container {
+          width: 940px;
+        }
+        #ew-content {
+          width: 580px;
+          float: left;
+        }
+        #ew-sidebar {
+          width: 260px;
+          float: right;
+        }
+        #ew-footer {
+          clear: both;
+        }
+
+      }
+
+      @media (max-width: 480px){
+        .button {
+          font-size: 12px;
+        }
+        #ew-header{
+          font-size: 20px;
+        }
+        #ew-footer h3,p{
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+
+  <body id="body-bg">
+    <div id="ew-container">
+      <div id="ew-header">
+        <h1>Welcome to WebAR! <a href="../index.html"><img id="img-header" src="./home_icon.png"></a>
+        </h1>
+      </div>
+
+      <!--첫 번째 섹션-->
+      <div id="ew-content">
+        <h2>Practice 1 - Face Tracking</h2>
+
+        <p>아래 예시를 체험해봅시다</p>
+        <p>
+            <a class="button" href="./4-1_FaceTrackingExample/FaceMesh_revised.html" target="_blank">Example 1</a> 
+        </p>
+        <p>
+            <a class="button" href="./4-2_FaceTrackingExample2/PhotoCapture_revised.html" target="_blank">Example 2 with Photo Capture</a> 
+        </p>
+
+      </div>
+
+
+      <div id="ew-sidebar">
+        <h2>Notes for Face Tracking</h2>
+        <p>Face Mesh를 수정하여 나만의 필터를 만들 수 있습니다</p>
+        <p>
+            <a id="additional-links" href="./mesh_map.jpg" target="_blank">Mesh Map</a><br>
+            <a id="additional-links" href="./mesh_map.png" target="_blank">Mesh Map(blank background)</a>
+        </p>
+      </div>
+
+
+      <!--두 번째 섹션-->
+      <div id="ew-content">
+        <h2>Practice 2 - Image Tracking</h2>
+
+        <p>아래 예시를 체험해봅시다</p>
+        <p>
+            다양한 3D 모델을 살펴봅시다<br>
+            <a class="button" href="./4-3_ImageTrackingExample1/FLE_3dModelAnim1_avocado.html">Example 1</a> 
+            <a class="button" href="./4-3_ImageTrackingExample1/FLE_3dModelAnim2_rides.html">Example 2</a> 
+            <a class="button" href="./4-3_ImageTrackingExample1/FLE_3dModelAnim3_flag.html">Example 3</a> 
+            <a class="button" href="./4-3_ImageTrackingExample1/FLE_3dModelAnim4_groot.html">Example 4</a> 
+            <a class="button" href="./4-3_ImageTrackingExample1/FLE_3dModelAnim5_makar.html">Example 5</a> 
+            <a class="button" href="./4-3_ImageTrackingExample1/FLE_3dModelAnim6_croissant.html">Example 6</a> 
+        </p>
+        <p>
+            Multiple Image Target<br>
+            <a class="button" href="./4-4_ImageTrackingExample2/FLE_MutiTarget.html">Example 7</a> 
+        </p>
+        <p>
+            Audio Contents + Touch Interaction!<br>
+            <a class="button" href="./4-5_ImageTrackingExample3/FLE_AudioTouch.html">Example 8</a> 
+        </p>
+
+
+
+      </div>
+
+
+      <div id="ew-sidebar">
+        <h2>Notes for Image Tracking</h2>
+        <p>MindAR Image Compiler: 이미지를 MindAR 라이브러리에 사용할 수 있게 변환해줌. FeaturePoint 확인 필요함!</p>
+        <a id="additional-links" href="https://hiukim.github.io/mind-ar-js-doc/tools/compile">Image Target Compiler(by Mind AR)</a><br>
+        <a id="additional-links" href="./ImgTrackingBackgroundInfo/TheoryOfImageTracking.html">AR Image Tracking의 원리</a>
+        <p>
+          Examples from <a id="additional-links" href = "https://www.udemy.com/course/introduction-to-web-ar-development/">HiuKim Yuen's course</a>
+        </p>
+        <p>
+          <a id="additional-links" href="./Trials/slider.html">Slider Trial</a>
+        </p>
+      </div>
+
+      
+      <!-- Footer Section -->
+      <div id="ew-footer">
+        <h3>Made by Hyo Won WANG</h3>
+        <p>Mathematics Education, COE, SNU, Seoul, SOUTH KOREA</p>
+      </div>
+
+
+    </div>
+  </body>
+</html>
