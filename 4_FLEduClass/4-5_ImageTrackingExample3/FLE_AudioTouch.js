@@ -1,11 +1,12 @@
+import * as THREE from 'three';
+import {MindARThree} from 'mindar-image-three';
 import {loadGLTF, loadAudio} from '../../applications/libs/loader.js';
-const THREE = window.MINDAR.IMAGE.THREE;
 
 document.addEventListener('DOMContentLoaded',() => {
     const start = async () => {
 
         // initialize MindAR 
-        const mindarThree = new window.MINDAR.IMAGE.MindARThree({
+        const mindarThree = new MindARThree({
             container: document.body,
             imageTargetSrc: './Target_1.mind', //bonjour
           });
