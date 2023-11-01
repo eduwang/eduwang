@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded',() => {
         
         // load 3d models
         const gltf = await loadGLTF('../3dModels/gltf_carousel_rides/scene.gltf');
-        gltf.scene.scale.set(0.15, 0.15, 0.15);
+        gltf.scene.scale.set(0.18, 0.18, 0.18);
         gltf.scene.rotation.set(Math.PI/2,0,0);
         gltf.scene.position.set(0, 0, 0.5);
 
