@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded',() => {
         
         //load Multiple Models
         const gltf1 = await loadGLTF('../3dModels/gltf_avocado/scene.gltf');
-        gltf1.scene.scale.set(0.05, 0.05, 0.05);
+        gltf1.scene.scale.set(0.04, 0.04, 0.04);
         gltf1.scene.rotation.set(Math.PI/2,0,0);
         gltf1.scene.position.set(0, -0.2, 0);
         const gltf1Anchor = mindarThree.addAnchor(0);

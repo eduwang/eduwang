@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded',() => {
         
         // load 3d models
         const gltf = await loadGLTF('../3dModels/gltf_avocado/scene.gltf');
-        gltf.scene.scale.set(0.05, 0.05, 0.05);
+        gltf.scene.scale.set(0.04, 0.04, 0.04);
         gltf.scene.rotation.set(Math.PI/2,0,0);
         gltf.scene.position.set(0, -0.2, 0);
 
