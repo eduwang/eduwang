@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import {MindARThree} from 'mindar-image-three';
-import {loadGLTF} from '../../applications/libs/loader.js';
+import {loadGLTF, loadAudio} from '../../applications/libs/loader.js';
 
 document.addEventListener('DOMContentLoaded',() => {
     const start = async () => {
@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded',() => {
         gltf1.scene.position.set(0, -0.2, 0);
         const gltf1Anchor = mindarThree.addAnchor(0);
         gltf1Anchor.group.add(gltf1.scene);
-
 
         const gltf2 = await loadGLTF('../3dModels/gltf_france/scene.gltf');
         gltf2.scene.scale.set(0.3, 0.3, 0.3);
@@ -63,6 +62,56 @@ document.addEventListener('DOMContentLoaded',() => {
         action4.play();
 
         const clock = new THREE.Clock();
+
+        const listner = new THREE.AudioListener();
+        camera.add(listner);
+
+        const audio1 = new THREE.Audio(listner);
+        const audioClip1 = await loadAudio("./Avocado.m4a");
+        audio1.setBuffer(audioClip1)
+
+        const audio2 = new THREE.Audio(listner);
+        const audioClip2 = await loadAudio("./France.m4a");
+        audio2.setBuffer(audioClip2)
+
+        const audio3 = new THREE.Audio(listner);
+        const audioClip3 = await loadAudio("./Groot.m4a");
+        audio3.setBuffer(audioClip3)
+
+        const audio4 = new THREE.Audio(listner);
+        const audioClip4 = await loadAudio("./Korok.m4a");
+        audio4.setBuffer(audioClip4)
+
+
+        document.body.addEventListener('click',(e) =>{
+            const mouseX = (e.clientX / window.innerWidth)*2-1;
+            const mouseY = -1*(e.clientY / window.innerHeight)*2+1; //top to bottom이 아니라 bottom to top임. 그래서 반전 시켜줘야 함
+            const mouse = new THREE.Vector2(mouseX,mouseY);
+
+            const raycaster = new THREE.Raycaster();
+            raycaster.setFromCamera(mouse, camera);
+
+            const intersects = raycaster.intersectObjects(scene.children, true); //console.log(scene)으로 scene의 구조를 파악해야 한다...!!
+            console.log(intersects)
+            if (intersects.length > 0) {
+                let o = intersects[0].object; 
+                while (o.parent && !o.userData.clickable) {
+                  o = o.parent;
+                }
+                //console.log(o === gltf1.scene)
+                //console.log(o === gltf2.scene)
+                if (o.userData.clickable) {
+    
+                    console.log(o === gltf1.scene)
+                    console.log(o === gltf2.scene)
+                 
+                    if (o === gltf1.scene) {
+                      audio1.play();
+                    }
+                  }
+                      }
+        });
+
 
         // start AR
         await mindarThree.start();
