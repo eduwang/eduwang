@@ -17,51 +17,32 @@ document.addEventListener('DOMContentLoaded',() => {
         
         //load Multiple Models
         const gltf1 = await loadGLTF('../3dModels/gltf_avocado/scene.gltf');
-        gltf1.scene.scale.set(0.04, 0.04, 0.04);
+        gltf1.scene.scale.set(0,0,0);
         gltf1.scene.rotation.set(Math.PI/2,0,0);
         gltf1.scene.position.set(0, -0.2, 0);
         const gltf1Anchor = mindarThree.addAnchor(0);
         gltf1Anchor.group.add(gltf1.scene);
 
         const gltf2 = await loadGLTF('../3dModels/gltf_france/scene.gltf');
-        gltf2.scene.scale.set(0.3, 0.3, 0.3);
+        gltf2.scene.scale.set(0,0,0);
         gltf2.scene.rotation.set(Math.PI/3,0,0);
         gltf2.scene.position.set(0, 0.3, 0.5);
         const gltf2Anchor = mindarThree.addAnchor(1);
         gltf2Anchor.group.add(gltf2.scene);
 
         const gltf3 = await loadGLTF('../3dModels/gltf_groot_dancing/scene.gltf');
-        gltf3.scene.scale.set(0.5, 0.5, 0.5);
+        gltf3.scene.scale.set(0,0,0);
         gltf3.scene.rotation.set(Math.PI/2,0,0);
         gltf3.scene.position.set(0, 0, 0.1);
         const gltf3Anchor = mindarThree.addAnchor(2);
         gltf3Anchor.group.add(gltf3.scene);
 
         const gltf4 = await loadGLTF('../3dModels/gltf_makar_from_wind_waker_-_the_legend_of_zelda/scene.gltf');
-        gltf4.scene.scale.set(3, 3, 3);
+        gltf4.scene.scale.set(0,0,0);
         gltf4.scene.rotation.set(Math.PI/2,0,0);
         gltf4.scene.position.set(0, 0, 0.5);
         const gltf4Anchor = mindarThree.addAnchor(3);
         gltf4Anchor.group.add(gltf4.scene);
-
-        //gltf.animations
-        const mixer1 = new THREE.AnimationMixer(gltf1.scene);
-        const action1 = mixer1.clipAction(gltf1.animations[0]); //첫 번째 애니메이션 실행
-        action1.play();
-
-        const mixer2 = new THREE.AnimationMixer(gltf2.scene);
-        const action2 = mixer2.clipAction(gltf2.animations[0]); //첫 번째 애니메이션 실행
-        action2.play();
-
-        const mixer3 = new THREE.AnimationMixer(gltf3.scene);
-        const action3 = mixer3.clipAction(gltf3.animations[0]); //첫 번째 애니메이션 실행
-        action3.play();
-
-        const mixer4 = new THREE.AnimationMixer(gltf4.scene);
-        const action4 = mixer4.clipAction(gltf4.animations[0]); //첫 번째 애니메이션 실행
-        action4.play();
-
-        const clock = new THREE.Clock();
 
         const listner = new THREE.AudioListener();
         camera.add(listner);
@@ -91,53 +72,84 @@ document.addEventListener('DOMContentLoaded',() => {
             const raycaster = new THREE.Raycaster();
             raycaster.setFromCamera(mouse, camera);
 
-            const intersects1 = raycaster.intersectObjects([gltf1.scene], true); //console.log(scene)으로 scene의 구조를 파악해야 한다...!!
-            const intersects2 = raycaster.intersectObjects([gltf2.scene], true); 
-            const intersects3 = raycaster.intersectObjects([gltf3.scene], true); 
-            const intersects4 = raycaster.intersectObjects([gltf4.scene], true); 
+            const intersects = raycaster.intersectObjects(scene.children, true); //오브젝트 하나를 지정하는게 아니라, scene에 나타나는 오브젝트 전체를 지정해야 나중에 편함
 
-  
-            console.log(intersects1.length)
-            console.log(intersects2.length)
-            console.log(intersects3.length)
-            console.log(intersects4.length)
-            
-            if (intersects1.length > 0) {
-                console.log("audio 1 play")
-                audio1.play()
+            console.log(intersects.length)
+
+            if (intersects.length > 0) {
+                let o = intersects[0].object;
+                while (o.parent && !o.userData.clickable) {
+                    o = o.parent;
+                }
+                console.log(o)
+
+                if (o.userData.clickable){
+                    if (o === gltf1.scene){
+                        audio1.play()
+                        console.log("avocado found");
+                    }
+                    if (o === gltf2.scene){
+                        audio2.play()
+                        console.log("france flag found");
+                    }
+                    if (o === gltf3.scene){
+                        audio3.play()
+                        console.log("dancing groot found");
+                    }
+                    if (o === gltf4.scene){
+                        audio4.play()
+                        console.log("Korok found");
+                    }
+                }
             }
-
-            if (intersects2.length > 0) {
-                console.log("audio 2 play")
-                audio2.play()
-            }
-
-            if (intersects3.length > 0) {
-                console.log("audio 3 play")
-                audio3.play()
-            }
-
-            if (intersects4.length > 0) {
-                console.log("audio 4 play")
-                audio4.play()
-            }
-
         });
 
+        //gltf.animations
+        const mixer1 = new THREE.AnimationMixer(gltf1.scene);
+        const action1 = mixer1.clipAction(gltf1.animations[0]); //첫 번째 애니메이션 실행
+        action1.play();
+
+        const mixer2 = new THREE.AnimationMixer(gltf2.scene);
+        const action2 = mixer2.clipAction(gltf2.animations[0]); //첫 번째 애니메이션 실행
+        action2.play();
+
+        const mixer3 = new THREE.AnimationMixer(gltf3.scene);
+        const action3 = mixer3.clipAction(gltf3.animations[0]); //첫 번째 애니메이션 실행
+        action3.play();
+
+        const mixer4 = new THREE.AnimationMixer(gltf4.scene);
+        const action4 = mixer4.clipAction(gltf4.animations[0]); //첫 번째 애니메이션 실행
+        action4.play();
+        
+        const clock = new THREE.Clock();
+
         gltf1Anchor.onTargetLost = () => {
-            gltf1.scene.scale.set(0,0,0)
+            gltf1.scene.scale.set(0, 0, 0);
         }
-        gltf1Anchor.onTargetFound = () =>{
-            gltf1.scene.scale.set(0.04,0.04,0.04)
+        gltf1Anchor.onTargetFound = () => {
+            gltf1.scene.userData.clickable = true
+            gltf1.scene.scale.set(0.04, 0.04, 0.04);
         }
         gltf2Anchor.onTargetLost = () => {
-            gltf2.scene.scale.set(0,0,0)
+            gltf2.scene.scale.set(0, 0, 0);
+        }
+        gltf2Anchor.onTargetFound = () => {
+            gltf2.scene.userData.clickable = true
+            gltf2.scene.scale.set(0.3, 0.3, 0.3);
         }
         gltf3Anchor.onTargetLost = () => {
-            gltf3.scene.scale.set(0,0,0)
+            gltf3.scene.scale.set(0, 0, 0);
+        }
+        gltf3Anchor.onTargetFound = () => {
+            gltf3.scene.userData.clickable = true
+            gltf3.scene.scale.set(0.5, 0.5, 0.5);
         }
         gltf4Anchor.onTargetLost = () => {
-            gltf4.scene.scale.set(0,0,0)
+            gltf4.scene.scale.set(0, 0, 0);
+        }
+        gltf4Anchor.onTargetFound = () => {
+            gltf4.scene.userData.clickable = true
+            gltf4.scene.scale.set(3, 3, 3);
         }
 
 

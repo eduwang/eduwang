@@ -47,7 +47,14 @@ document.addEventListener('DOMContentLoaded',() => {
 
             const intersects = raycaster.intersectObjects(scene.children, true); //오브젝트 하나를 지정하는게 아니라, scene에 나타나는 오브젝트 전체를 지정해야 나중에 편함
 
+            console.log(intersects.length)
+
             if (intersects.length > 0) {
+                let o = intersects[0].object;
+                while (o.parent && !o.userData.clickable) {
+                    o = o.parent;
+                }
+
                 console.log("on click found")
                 audio2.play()
             }
@@ -56,7 +63,6 @@ document.addEventListener('DOMContentLoaded',() => {
         Anchor.group.add(audio);
         Anchor.group.add(audio2); //UI에서는 얘가 필요없는 것 같음...
 
-
         audio.setRefDistance(100); //값을 바꿔가면서 테스트해봐야 함
         audio.setBuffer(audioClip);
         audio.setLoop(true);
@@ -64,12 +70,15 @@ document.addEventListener('DOMContentLoaded',() => {
         //Multiple Detection을 사용할 때 필요할 수 있음
         Anchor.onTargetFound = () => {
             console.log("on target found");
+            gltf.scene.scale.set(0.5, 0.5, 0.5);
             audio.play();
         }
 
         Anchor.onTargetLost = () => {
             console.log("on target lost");
             audio.pause();
+            gltf.scene.scale.set(0, 0, 0);
+
         }
 
 

@@ -83,34 +83,51 @@ document.addEventListener('DOMContentLoaded',() => {
         audio4.setBuffer(audioClip4)
 
 
-        document.body.addEventListener('click',(e) =>{
-            const mouseX = (e.clientX / window.innerWidth)*2-1;
-            const mouseY = -1*(e.clientY / window.innerHeight)*2+1; //top to bottom이 아니라 bottom to top임. 그래서 반전 시켜줘야 함
-            const mouse = new THREE.Vector2(mouseX,mouseY);
-
+        document.body.addEventListener('click', (e) => {
+            // normalize to -1 to 1
+            const mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+            const mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+            const mouse = new THREE.Vector2(mouseX, mouseY);
             const raycaster = new THREE.Raycaster();
             raycaster.setFromCamera(mouse, camera);
-
-            const intersects = raycaster.intersectObjects(scene.children, true); //console.log(scene)으로 scene의 구조를 파악해야 한다...!!
-            console.log(intersects)
+            const intersects = raycaster.intersectObjects(scene.children, true);
+            console.log(intersects.length)
             if (intersects.length > 0) {
                 let o = intersects[0].object; 
                 while (o.parent && !o.userData.clickable) {
-                  o = o.parent;
+                o = o.parent;
                 }
-                //console.log(o === gltf1.scene)
-                //console.log(o === gltf2.scene)
+       
+                console.log(o === gltf1.scene)
+                console.log(o === gltf2.scene)
+            
                 if (o.userData.clickable) {
-    
-                    console.log(o === gltf1.scene)
-                    console.log(o === gltf2.scene)
-                 
-                    if (o === gltf1.scene) {
-                      audio1.play();
+                
+                console.log(o === raccoon.scene)
+                console.log(o === bear.scene)
+                
+                    if (o === raccoon.scene) {
+                        sound.play();
                     }
-                  }
-                      }
-        });
+                }
+                }
+          });
+
+        gltf1Anchor.onTargetLost = () => {
+            gltf1.scene.scale.set(0,0,0)
+        }
+        gltf1Anchor.onTargetFound = () =>{
+            gltf1.scene.scale.set(0.04,0.04,0.04)
+        }
+        gltf2Anchor.onTargetLost = () => {
+            gltf2.scene.scale.set(0,0,0)
+        }
+        gltf3Anchor.onTargetLost = () => {
+            gltf3.scene.scale.set(0,0,0)
+        }
+        gltf4Anchor.onTargetLost = () => {
+            gltf4.scene.scale.set(0,0,0)
+        }
 
 
         // start AR
