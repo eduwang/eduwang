@@ -1,0 +1,11 @@
+Model Information:
+* title:	Mario Animacion
+* source:	https://sketchfab.com/3d-models/mario-animacion-95b9d27412a7482c8c18807cf393fd9e
+* author:	chems.65 (https://sketchfab.com/adrialpq)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Mario Animacion" (https://sketchfab.com/3d-models/mario-animacion-95b9d27412a7482c8c18807cf393fd9e) by chems.65 (https://sketchfab.com/adrialpq) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Running Mario with fixed textures
+* source:	https://sketchfab.com/3d-models/running-mario-with-fixed-textures-493e424b2aba4fce9b38fcd02784d2ac
+* author:	Mr. Soupey (https://sketchfab.com/fartingfrank)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Running Mario with fixed textures" (https://sketchfab.com/3d-models/running-mario-with-fixed-textures-493e424b2aba4fce9b38fcd02784d2ac) by Mr. Soupey (https://sketchfab.com/fartingfrank) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

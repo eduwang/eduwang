@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded',() => {
         scene.add(light);
         
         //load Multiple Models
-        const gltf1 = await loadGLTF('../3dModels/gltf_avocado/scene.gltf');
-        gltf1.scene.scale.set(0,0,0);
+        const gltf1 = await loadGLTF('../3dModels/gltf_mario3/scene.gltf');
+        gltf1.scene.scale.set(0, 0, 0);
         gltf1.scene.rotation.set(Math.PI/2,0,0);
-        gltf1.scene.position.set(0, -0.2, 0);
+        gltf1.scene.position.set(0, 0, 0);
         const gltf1Anchor = mindarThree.addAnchor(0);
         gltf1Anchor.group.add(gltf1.scene);
 
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded',() => {
         camera.add(listner);
 
         const audio1 = new THREE.Audio(listner);
-        const audioClip1 = await loadAudio("./Avocado.m4a");
+        const audioClip1 = await loadAudio("./ItsMeMario.mp3");
         audio1.setBuffer(audioClip1)
 
         const audio2 = new THREE.Audio(listner);
@@ -74,7 +74,8 @@ document.addEventListener('DOMContentLoaded',() => {
 
             const intersects = raycaster.intersectObjects(scene.children, true); //오브젝트 하나를 지정하는게 아니라, scene에 나타나는 오브젝트 전체를 지정해야 나중에 편함
 
-            console.log(intersects.length)
+            //console.log(intersects.length)
+            //console.log
 
             if (intersects.length > 0) {
                 let o = intersects[0].object;
@@ -86,7 +87,7 @@ document.addEventListener('DOMContentLoaded',() => {
                 if (o.userData.clickable){
                     if (o === gltf1.scene){
                         audio1.play()
-                        console.log("avocado found");
+                        console.log("mario found");
                     }
                     if (o === gltf2.scene){
                         audio2.play()
@@ -106,7 +107,7 @@ document.addEventListener('DOMContentLoaded',() => {
 
         //gltf.animations
         const mixer1 = new THREE.AnimationMixer(gltf1.scene);
-        const action1 = mixer1.clipAction(gltf1.animations[0]); //첫 번째 애니메이션 실행
+        const action1 = mixer1.clipAction(gltf1.animations[2]); //첫 번째 애니메이션 실행
         action1.play();
 
         const mixer2 = new THREE.AnimationMixer(gltf2.scene);
@@ -128,7 +129,7 @@ document.addEventListener('DOMContentLoaded',() => {
         }
         gltf1Anchor.onTargetFound = () => {
             gltf1.scene.userData.clickable = true
-            gltf1.scene.scale.set(0.04, 0.04, 0.04);
+            gltf1.scene.scale.set(1, 1, 1);
         }
         gltf2Anchor.onTargetLost = () => {
             gltf2.scene.scale.set(0, 0, 0);
