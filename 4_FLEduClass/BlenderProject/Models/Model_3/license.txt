@@ -1,0 +1,11 @@
+Model Information:
+* title:	Football
+* source:	https://sketchfab.com/3d-models/football-8aca3e5b2f4c47018811292025a1183c
+* author:	xenera (https://sketchfab.com/xenera)
+
+Model License:
+* license type:	CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions can not be distributed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Football" (https://sketchfab.com/3d-models/football-8aca3e5b2f4c47018811292025a1183c) by xenera (https://sketchfab.com/xenera) licensed under CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)

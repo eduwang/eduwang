@@ -1,0 +1,11 @@
+Model Information:
+* title:	Headphone
+* source:	https://sketchfab.com/3d-models/headphone-24be599a35e345b187a169d1a773a0e6
+* author:	Jaycin (https://sketchfab.com/jaycin)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Headphone" (https://sketchfab.com/3d-models/headphone-24be599a35e345b187a169d1a773a0e6) by Jaycin (https://sketchfab.com/jaycin) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

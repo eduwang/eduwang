@@ -1,0 +1,11 @@
+Model Information:
+* title:	Question Mark
+* source:	https://sketchfab.com/3d-models/question-mark-d812fdd4efd84f77af7883a3a30b4d5b
+* author:	Miguelangelo Rosario (https://sketchfab.com/miguelangelo2k)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Question Mark" (https://sketchfab.com/3d-models/question-mark-d812fdd4efd84f77af7883a3a30b4d5b) by Miguelangelo Rosario (https://sketchfab.com/miguelangelo2k) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

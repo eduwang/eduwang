@@ -1,0 +1,11 @@
+Model Information:
+* title:	WIP - Swimming dude
+* source:	https://sketchfab.com/3d-models/wip-swimming-dude-5562c2217f8e467785c654f97d232879
+* author:	Loïc Norgeot (https://sketchfab.com/norgeotloic)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "WIP - Swimming dude" (https://sketchfab.com/3d-models/wip-swimming-dude-5562c2217f8e467785c654f97d232879) by Loïc Norgeot (https://sketchfab.com/norgeotloic) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

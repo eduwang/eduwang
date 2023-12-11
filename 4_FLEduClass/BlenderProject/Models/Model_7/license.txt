@@ -1,0 +1,11 @@
+Model Information:
+* title:	Violin Player
+* source:	https://sketchfab.com/3d-models/violin-player-dab4219d2ddd449e8c20f1264b246a37
+* author:	Oromis Hardware (https://sketchfab.com/oromis)
+
+Model License:
+* license type:	CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions can not be distributed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Violin Player" (https://sketchfab.com/3d-models/violin-player-dab4219d2ddd449e8c20f1264b246a37) by Oromis Hardware (https://sketchfab.com/oromis) licensed under CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)
