@@ -1,5 +1,5 @@
-import * as THREE from '../../libs/three.js-r132/build/three.module.js';
-import {ARButton} from '../../libs/three.js-r132/examples/jsm/webxr/ARButton.js';
+import * as THREE from '../../applications/libs/three.js-r132/build/three.module.js';
+import {ARButton} from '../../applications/libs/three.js-r132/examples/jsm/webxr/ARButton.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const initialize = async() => {
@@ -29,8 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       renderer.render(scene, camera);
     });
 
-    //이 방법이 간단하지만, 앞선 예제가 원리를 이해하기에는 좋음
-    const arButton = ARButton.createButton(renderer, {optionalFeatures: ['dom-overlay'], domOverlay: {root: document.body}}); 
+    const arButton = ARButton.createButton(renderer, {optionalFeatures: ['dom-overlay'], domOverlay: {root: document.body}});
     document.body.appendChild(renderer.domElement);
     document.body.appendChild(arButton);
   }
