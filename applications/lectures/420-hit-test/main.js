@@ -42,22 +42,22 @@ document.addEventListener('DOMContentLoaded', () => {
       const hitTestSource = await session.requestHitTestSource({space: viewerReferenceSpace});
 
       renderer.setAnimationLoop((timestamp, frame) => {
-	if (!frame) return;
+        if (!frame) return;
 
-	const hitTestResults = frame.getHitTestResults(hitTestSource);
+        const hitTestResults = frame.getHitTestResults(hitTestSource);
 
-	if (hitTestResults.length) {
-	  const hit = hitTestResults[0];
-	  const referenceSpace = renderer.xr.getReferenceSpace(); // ARButton requested 'local' reference space
-	  const hitPose = hit.getPose(referenceSpace);
+        if (hitTestResults.length) {
+          const hit = hitTestResults[0];
+          const referenceSpace = renderer.xr.getReferenceSpace(); // ARButton requested 'local' reference space
+          const hitPose = hit.getPose(referenceSpace);
 
-	  reticle.visible = true;
-	  reticle.matrix.fromArray(hitPose.transform.matrix);
-	} else {
-	  reticle.visible = false;
-	}
+          reticle.visible = true;
+          reticle.matrix.fromArray(hitPose.transform.matrix);
+        } else {
+          reticle.visible = false;
+        }
 
-	renderer.render(scene, camera);
+        renderer.render(scene, camera);
       });
     });
 
