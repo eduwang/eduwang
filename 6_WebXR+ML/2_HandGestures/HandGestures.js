@@ -111,19 +111,23 @@ document.addEventListener('DOMContentLoaded',()=>{
                     const best = estimatedGestures.gestures.sort((g1, g2) => g2.confidence-g1.confidence)[0];
 
                     if (best.name === 'thumbs_up'){
-                        fadeToAction(run2Action, 0.5);
+                        fadeToAction(run2Action, 0.1);
+                        console.log("thumbs up!")
                     }
                     
                     if (best.name === 'wave'){
-                        fadeToAction(walkAction, 0.5);
+                        fadeToAction(walkAction, 3.0);
+                        console.log("wave!")
                     }
                     
                     if (best.name === 'jump'){
                         fadeToAction(jumpAction, 0.5);
+                        console.log("jump!")
                     }
                     
                     if (best.name === 'die'){
                         fadeToAction(runAction, 0.5);
+                        console.log("die:(")
                     }
                 }
 
