@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <script src="./ConeDihedralAngle.JS"></script>
+        <style>
+            #inputArea{
+                text-align: center;
+                padding-left: 10%;
+                padding-right: 10%;
+                font-size: 20px;
+                width: 100%;
+                background-color: aliceblue;
+            }
+            #resultArea{
+                text-align: center;
+                font-size: 25px;
+                width: 100%;
+                background-color: aliceblue;
+            }
+            #buttonDesign{
+                width: 50%;
+            }
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center; /*Horizontally centers content */ 
+                align-items: center;   /*  Vertically centers content*/
+                height: 100vh;           /* Takes full viewport height */
+                margin: 0;               /* Removes default margin */
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="inputArea">
+            <p>
+                <label>원뿔 - 밑면의 반지름</label>
+                <input type="text" id="radius" name="radiusFloat">
+            </p>
+            <p>
+                <label>원뿔 - 높이</label>
+                <input type="text" id="height" name="heightFloat">
+            </p>
+            <p>
+                <label>원뿔 - 밑면의 변의 수</label>
+                <input type="text" id="edges" name="edgesInt">
+            </p>
+        </div>
+        <br>
+        <div id="resultArea">
+            <p>
+                <button id="buttonDesign" onclick="calculateAngle()">이면각 계산하기!(소수 넷째 자리까지)</button>
+            </p>
+            <p id="calculateResult">
+            </p>
+
+        </div>
+    </body>
+
+
+</html>
+
