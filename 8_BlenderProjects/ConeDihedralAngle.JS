@@ -40,7 +40,7 @@ function calculateAngle() {
     if (!isFloat(coneR) || !isFloat(coneH) || !isFloat(coneE)){
         displayDataElement.innerHTML = '세 칸 모두 숫자(정수 또는 유리수)만 입력해주세요!'
     } else{
-        displayDataElement.innerHTML = Math.floor(targetAngleD*10**4)/10**4;
+        displayDataElement.innerHTML = Math.floor(targetAngleD*10**4)/10**4+"°";
     }
 
     // You can also perform other operations with the received data, such as sending it to a server using AJAX, manipulating it, etc.
