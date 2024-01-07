@@ -22,12 +22,25 @@
         overflow: hidden;
       }
     </style>
+    <script type = "module" src ="./modelViewer_4.js"></script>
+
   </head>
 
   <body>
     <div>
-        <p>정사면체의 전개도</p>
+        <p>다양한 입체도형의 모양과 그 전개도를 파악해봅시다</p>
+        <button class="model-selector" value="4-f">정사면체</button>
+        <button class="model-selector" value="8-f">정팔면체</button>
+        <button class="model-selector" value="12-f">정십이면체</button>
+        <button class="model-selector" value="20-f">정이십면체</button>
     </div>
-    <script type = "module" src ="./modelViewer_4.js"></script>
+    <div id="model-container">
+      <div id="buttons">
+        <button id="fold">Fold</button>
+        <button id="unfold">Unfold</button>
+        <button id="pause">Pause</button>
+      </div>
+    </div>
+
   </body>
 </html>

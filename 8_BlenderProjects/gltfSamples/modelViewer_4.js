@@ -2,7 +2,6 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-
 const renderer = new THREE.WebGLRenderer({antialias: true});
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 
@@ -13,7 +12,9 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
-document.body.appendChild(renderer.domElement);
+const container = document.getElementById('model-container')
+container.appendChild(renderer.domElement);
+//document.body.appendChild(renderer.domElement);
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 1, 1000);
@@ -52,29 +53,63 @@ scene.add(light);
 // spotLight.shadow.bias = -0.0001;
 // scene.add(spotLight);
 
+const myModels = {
+    '4-f': './models/00_4Triangle.gltf',
+    '8-f': './models/00_8Triangle.gltf',
+    '12-f': './models/00_12Pentagon.gltf',
+    '20-f': './models/00_20Triangle.gltf'
+}
+
+let currentModel = '4-f';
+
+//model-selector button
+const modelSelector = document.querySelectorAll('.model-selector');
+modelSelector.forEach(button =>{
+    button.addEventListener('click',()=>{
+        currentModel = button.value;
+        
+        scene.remove(scene.getObjectByName('currentModel'));
+    
+        loadModel(myModels[currentModel]);
+    });
+})
+
+
 let mixer; // Declare the mixer variable at a higher scope
 
 const loader = new GLTFLoader();
-loader.load('./models/00_4Triangle.gltf',(gltf)=>{
-    console.log(gltf.animations[0]);
-    const mesh = gltf.scene;
 
-    mesh.traverse((child)=>{
-        if (child.isMesh) {
-            child.castShadow = true;
-            child.receiveShadow = true;
+function loadModel(modelPath) {
+    loader.load(modelPath,(gltf)=>{
+        const previousModel = scene.getObjectByName('currentModel');
+        if (previousModel){
+            scene.remove(previousModel);
+        }
+
+        const mesh = gltf.scene;
+        mesh.name = 'currentModel'
+    
+        mesh.traverse((child)=>{
+            if (child.isMesh) {
+                child.castShadow = true;
+                child.receiveShadow = true;
+            }
+        });
+    
+        mesh.position.set(0,1.05,-1);
+        scene.add(mesh);
+        //gltf.animations
+        if (gltf.animations && gltf.animations.length >0){
+            mixer = new THREE.AnimationMixer(gltf.scene);
+            const action = mixer.clipAction(gltf.animations[0]); //첫 번째 애니메이션 실행
+            action.play();
+            action.setLoop(THREE.LoopRepeat); // Set the animation to play only once
         }
     });
 
-    mesh.position.set(0,1.05,-1);
-    scene.add(mesh);
-    //gltf.animations
-    mixer = new THREE.AnimationMixer(gltf.scene);
-    const action = mixer.clipAction(gltf.animations[0]); //첫 번째 애니메이션 실행
-    action.setLoop(THREE.LoopRepeat); // Set the animation to play only once
-    console.log(mixer);
-});
-console.log(mixer);
+}
+
+loadModel(myModels[currentModel]);
 
 const clock = new THREE.Clock();
 
