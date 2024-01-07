@@ -5,15 +5,15 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 const renderer = new THREE.WebGLRenderer({antialias: true});
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 
-renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor(0x000000);
 renderer.setPixelRatio(window.devicePixelRatio);
 
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
-const container = document.getElementById('model-container')
+const container = document.getElementById('model-content')
 container.appendChild(renderer.domElement);
+renderer.setSize(container.clientWidth, container.clientHeight);
 //document.body.appendChild(renderer.domElement);
 
 const scene = new THREE.Scene();
@@ -76,6 +76,7 @@ modelSelector.forEach(button =>{
 
 
 let mixer; // Declare the mixer variable at a higher scope
+let action;
 
 const loader = new GLTFLoader();
 
@@ -104,7 +105,13 @@ function loadModel(modelPath) {
             const action = mixer.clipAction(gltf.animations[0]); //첫 번째 애니메이션 실행
             action.play();
             action.setLoop(THREE.LoopRepeat); // Set the animation to play only once
+            const targetTime = gltf.animations[0].duration;
         }
+
+        return function getAction(){
+            return action;
+        }
+        
     });
 
 }
@@ -112,6 +119,22 @@ function loadModel(modelPath) {
 loadModel(myModels[currentModel]);
 
 const clock = new THREE.Clock();
+
+//button operations
+const foldButton = document.querySelector("#fold");
+const unfoldButton = document.querySelector("#unfold");
+const pauseButton = document.querySelector("#pause");
+
+const getActionFromLoadModel = loadModel(myModels[currentModel]); // Call loadModel and get the function
+
+foldButton.addEventListener('click', ()=>{
+    const currentAction = getActionFromLoadModel;
+    //console.log("fold button clicked")
+    currentAction.play()
+    //unfoldButton.style.display = "inline";
+    //foldButton.style.display = "none";
+    mixer.timeScale = 1;
+}); 
 
 function animate() {
     requestAnimationFrame(animate);

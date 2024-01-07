@@ -20,6 +20,21 @@
         width: 100%;
         height: 100%;
         overflow: hidden;
+        text-align: center;
+      }
+      #model-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%; 
+        height: 80%;
+        border: 1px solid black;
+        margin: auto;
+      }
+      #model-content{
+        width: 99%; /* Adjusted width */
+        height: 99%; /* Adjusted height */
+        /* You can add other styles as needed */
       }
     </style>
     <script type = "module" src ="./modelViewer_4.js"></script>
@@ -35,12 +50,14 @@
         <button class="model-selector" value="20-f">정이십면체</button>
     </div>
     <div id="model-container">
-      <div id="buttons">
-        <button id="fold">Fold</button>
-        <button id="unfold">Unfold</button>
-        <button id="pause">Pause</button>
+      <div id="model-content">
       </div>
     </div>
+    <!-- <div id="buttons">
+      <button id="fold">Fold</button>
+      <button id="unfold">Unfold</button>
+      <button id="pause">Pause</button>
+    </div> -->
 
   </body>
 </html>
