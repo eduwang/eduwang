@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- <meta name ="viewport" content="width=device-width, initial-scale = 1.0"> -->
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+      {
+        "imports":{
+          "three": "https://unpkg.com/three@v0.153.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@v0.153.0/examples/jsm/"
+        }
+      }
+    </script> 
+
+    <style>
+      html, body {
+        position: relative;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        text-align: center;
+      }
+      #model-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%; 
+        height: 80%;
+        border: 1px solid black;
+        margin: auto;
+        position: relative;
+      }
+      #model-content{
+        display: flex;
+        justify-content: center; /* Horizontally center the child elements */
+        align-items: center;  
+        width: 99%; /* Adjusted width */
+        height: 99%; /* Adjusted height */
+      }
+      #init{
+        width: 100px;
+        height: 100px;
+        display: none;
+        position: absolute; /* Use absolute positioning */
+        top: 50%;           /* Position 50% from the top */
+        left: 50%;          /* Position 50% from the left */
+        transform: translate(-50%, -50%); /* Centering trick */
+      }
+      #buttons{
+        display: inline;
+      }
+    </style>
+    <script type = "module" src ="./3DmodelViewer.js"></script>
+
+  </head>
+
+  <body>
+    <div>
+        <p>다양한 입체도형의 모양과 그 전개도를 파악해봅시다</p>
+        <p>
+          <button class="model-selector" value="4-f">정사면체</button>
+          <button class="model-selector" value="8-f">정팔면체</button>
+          <button class="model-selector" value="12-f">정십이면체</button>
+          <button class="model-selector" value="20-f">정이십면체</button>
+        </p>
+    </div>
+    <div id="model-container">
+      <button id="init">실행</button>
+      <div id="model-content">
+      </div>
+    </div>
+    <div id="buttons">
+      <p> </p>
+      <button id="fold">접기</button>
+      <button id="unfold">펼치기</button>
+      <button id="pause">멈추기</button>
+    </div>
+
+  </body>
+</html>
