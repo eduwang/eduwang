@@ -30,14 +30,26 @@
         height: 80%;
         border: 1px solid black;
         margin: auto;
+        position: relative;
       }
       #model-content{
+        display: flex;
+        justify-content: center; /* Horizontally center the child elements */
+        align-items: center;  
         width: 99%; /* Adjusted width */
         height: 99%; /* Adjusted height */
-        /* You can add other styles as needed */
+      }
+      #init{
+        width: 100px;
+        height: 100px;
+        display: none;
+        position: absolute; /* Use absolute positioning */
+        top: 50%;           /* Position 50% from the top */
+        left: 50%;          /* Position 50% from the left */
+        transform: translate(-50%, -50%); /* Centering trick */
       }
       #buttons{
-        display: none;
+        display: inline;
       }
     </style>
     <script type = "module" src ="./modelViewer_4.js"></script>
@@ -55,13 +67,15 @@
         </p>
     </div>
     <div id="model-container">
+      <button id="init">실행</button>
       <div id="model-content">
       </div>
     </div>
     <div id="buttons">
-      <button id="fold">Fold</button>
-      <button id="unfold">Unfold</button>
-      <button id="pause">Pause</button>
+      <p> </p>
+      <button id="fold">접기</button>
+      <button id="unfold">펼치기</button>
+      <button id="pause">멈추기</button>
     </div>
 
   </body>

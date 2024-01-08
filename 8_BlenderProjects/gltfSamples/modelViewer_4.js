@@ -76,7 +76,8 @@ modelSelector.forEach(button =>{
 
 
 let mixer; // Declare the mixer variable at a higher scope
-let action;
+let action; // Declare the action variable at a higher scope
+let targetTime; 
 
 const loader = new GLTFLoader();
 
@@ -102,16 +103,11 @@ function loadModel(modelPath) {
         //gltf.animations
         if (gltf.animations && gltf.animations.length >0){
             mixer = new THREE.AnimationMixer(gltf.scene);
-            const action = mixer.clipAction(gltf.animations[0]); //첫 번째 애니메이션 실행
-            action.play();
+            action = mixer.clipAction(gltf.animations[0]); //첫 번째 애니메이션 실행
+            //action.play();
             action.setLoop(THREE.LoopRepeat); // Set the animation to play only once
-            const targetTime = gltf.animations[0].duration;
-        }
-
-        return function getAction(){
-            return action;
-        }
-        
+            targetTime = gltf.animations[0].duration;
+        }        
     });
 
 }
@@ -125,16 +121,23 @@ const foldButton = document.querySelector("#fold");
 const unfoldButton = document.querySelector("#unfold");
 const pauseButton = document.querySelector("#pause");
 
-const getActionFromLoadModel = loadModel(myModels[currentModel]); // Call loadModel and get the function
 
 foldButton.addEventListener('click', ()=>{
-    const currentAction = getActionFromLoadModel;
-    //console.log("fold button clicked")
-    currentAction.play()
-    //unfoldButton.style.display = "inline";
-    //foldButton.style.display = "none";
+    action.play()
+    mixer.timeScale = -1;
+}); 
+unfoldButton.addEventListener('click', ()=>{
+    action.play()
     mixer.timeScale = 1;
 }); 
+
+pauseButton.addEventListener('click', ()=>{
+    if (mixer) {
+        mixer.timeScale = 0; // Pauses the animation
+    }
+});
+
+
 
 function animate() {
     requestAnimationFrame(animate);
@@ -142,10 +145,30 @@ function animate() {
     if (mixer) {
         mixer.update(delta);
     } else{
-        //console.log("noMixer")
+        console.log("noMixer")
     }
     controls.update();
     renderer.render(scene, camera);
+    if (mixer.timeScale === 1){
+        if (Math.abs(mixer._actions[0].time-targetTime) < 0.05 ) {
+            mixer.timeScale = 0;
+        };
+    } else if (mixer.timeScale === -1){
+        if (mixer._actions[0].time < 0.05  ) {
+            mixer.timeScale = 0;
+        };
+    }
 }
 
-animate();
+const initButton = document.querySelector('#init');
+setTimeout(() => {
+    initButton.style.display = 'block'; // Display the button by setting its CSS display property to 'block'
+}, 1500);
+initButton.addEventListener('click', ()=>{
+    animate();
+    initButton.style.display = "none";
+})
+
+//animate();
+
+
