@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <meta name ="viewport" content="width=device-width, initial-scale = 1.0">
+    <!-- <script src="../../applications/libs/mindar/mindar-image-three.prod.js"></script> -->
+    <script async src ="https://unpkg.com/ed-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <!-- 버전이 바뀌면 아래 코드를 수정해야 함! -->
+    <script type="importmap">
+      {
+        "imports":{
+          "three": "https://unpkg.com/three@0.147.0/build/three.module.js",
+          "three/addons/":"https://unpkg.com/three@0.147.0/examples/jsm/",
+          "mindar-image-three":"https://cdn.jsdelivr.net/npm/mind-ar@1.2.1/dist/mindar-image-three.prod.js"
+        }
+      }
+    </script>
+
+
+    <script src ="./sample.js" type = "module"></script>
+    <style>
+      html, body {
+        position: relative;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      #ref{
+        position: fixed;
+        z-index: 10;
+        right: 10px;
+        font-size: 10px;
+      }
+      .ref_link{
+        text-decoration: none; /* Remove underline from anchor tag */
+        color: black;
+      }
+    </style>
+  </head>
+
+  <body>
+
+  </body>
+</html>
