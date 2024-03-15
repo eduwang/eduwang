@@ -15,49 +15,34 @@
 
     <style>
       html, body {
-        position: relative;
         margin: 0;
+        padding: 0;
         width: 100%;
         height: 100%;
         overflow: hidden;
-        text-align: center;
-      }
-      #model-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 80%; 
-        height: 80%;
-        border: 1px solid black;
-        margin: auto;
         position: relative;
       }
-      #model-content{
-        display: flex;
-        justify-content: center; /* Horizontally center the child elements */
-        align-items: center;  
-        width: 99%; /* Adjusted width */
-        height: 99%; /* Adjusted height */
-      }
-      #init{
-        width: 100px;
-        height: 100px;
-        display: none;
-        position: absolute; /* Use absolute positioning */
-        top: 50%;           /* Position 50% from the top */
-        left: 50%;          /* Position 50% from the left */
-        transform: translate(-50%, -50%); /* Centering trick */
-      }
-      #buttons{
-        display: inline;
-      }
       #endAngleDisplay{
-        position: absolute;
-        top: 46%;
-        left: 51%;
-        color: white;
+        color: black;
         font-family: Arial;
-        z-index: 1; /* Ensure the display is above the Three.js canvas */
+      }
+      #protractor-frame {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80%; /* Adjust width as needed */
+        height: 80px; /* Adjust height as needed */
+        background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+        border-bottom: 1px solid black;
+      }
+      canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
       }
     </style>
     <script type = "module" src ="./ProtractorTrial_Fixed.js"></script>
@@ -66,7 +51,9 @@
   </head>
 
   <body>
-    <div id="endAngleDisplay"></div>
+    <div id="protractor-frame">
+      <div id="endAngleDisplay"></div>
+    </div>
 
   </body>
 </html>
