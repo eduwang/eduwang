@@ -2,8 +2,6 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <!-- <meta name ="viewport" content="width=device-width, initial-scale = 1.0"> -->
-    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
     <script type="importmap">
       {
         "imports":{
@@ -11,8 +9,8 @@
           "three/addons/": "https://unpkg.com/three@v0.153.0/examples/jsm/"
         }
       }
-    </script> 
-
+    </script>
+    
     <style>
       html, body {
         margin: 0;
@@ -40,17 +38,19 @@
         justify-content: center;
         width: 80%; /* Adjust width as needed */
         height: 80px; /* Adjust height as needed */
-        border-bottom: 1px solid black;
+        z-index: 1;
       }
-      canvas {
-            width: 100%;
-            height: 100%;
-            display: block;
-      }
+      canvas, #videoElement {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0; /* Ensure the canvas and video are behind other elements */
+       }
     </style>
     <script type = "module" src ="./Protractor_Main.js"></script>
-    <script type = "module" src ="./Protractor_Camera.js"></script>
-    <script src="https://threejs.org/build/three.js"></script>
 
   </head>
 
@@ -58,6 +58,17 @@
     <div id="protractor-frame">
       <div id="endAngleDisplay"></div>
     </div>
-
+    <video id="videoElement" autoplay></video>
+    <script>
+        // Access the rear camera
+        navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
+            .then(function (stream) {
+                var video = document.getElementById('videoElement');
+                video.srcObject = stream;
+            })
+            .catch(function (error) {
+                console.error('Error accessing the camera: ', error);
+            });
+    </script>
   </body>
 </html>
