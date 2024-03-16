@@ -8,14 +8,14 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 // Create an arc
-var radius = 5;
+var radius = calculateRadius();
 var startAngle = 0;
 var endAngle = Math.PI / 2;
 var segments = 32;
 var arcGeometry = new THREE.ArcCurve(0, 0, radius, startAngle, endAngle, false);
 var arcPoints = arcGeometry.getPoints(segments);
 var arcGeometryLine = new THREE.BufferGeometry().setFromPoints(arcPoints);
-var arcMaterial = new THREE.LineBasicMaterial({ color: 0x00ff00, linewidth: 100 });
+var arcMaterial = new THREE.LineBasicMaterial({ color: 0x6AA84F, linewidth: 50 });
 var arcLine = new THREE.Line(arcGeometryLine, arcMaterial);
 scene.add(arcLine);
 
@@ -113,3 +113,10 @@ function animate() {
 
 animate();
 
+// Function to calculate radius based on screen size
+function calculateRadius() {
+    // Calculate radius based on screen width and height
+    var maxRadius = (window.innerWidth * 0.0025)+1; // Adjust the multiplier as needed to fit your design
+    console.log(maxRadius);
+    return maxRadius;
+}
