@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script type="importmap">
+      {
+        "imports":{
+          "three": "https://unpkg.com/three@v0.153.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@v0.153.0/examples/jsm/"
+        }
+      }
+    </script>
+    
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+      }
+      #endAngleDisplay{
+        position: absolute;
+        top: 46%;
+        left: 51%;
+        color: white;
+        font-family: Arial;
+        z-index: 1; /* Ensure the display is above the Three.js canvas */
+        font-size: 30px;
+        text-shadow: -1px 0px black, 0px 1px black, 1px 0px black, 0px -1px black;
+      }
+      #protractor-frame {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60%; /* Adjust width as needed */
+        height: 60%; /* Adjust height as needed */
+        z-index: 1;
+      }
+      canvas, #videoElement {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0; /* Ensure the canvas and video are behind other elements */
+       }
+    </style>
+    <script type = "module" src ="./Protractor_Main.js"></script>
+
+  </head>
+
+  <body>
+    <div id="protractor-frame">
+      <div id="endAngleDisplay"></div>
+    </div>
+    <video id="videoElement" autoplay></video>
+    <script>
+        // Access the rear camera
+        navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
+            .then(function (stream) {
+                var video = document.getElementById('videoElement');
+                video.srcObject = stream;
+            })
+            .catch(function (error) {
+                console.error('Error accessing the camera: ', error);
+            });
+    </script>
+  </body>
+</html>
