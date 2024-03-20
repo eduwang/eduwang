@@ -3,34 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rear Camera Example</title>
+    <title>Quadratic Function Visualization</title>
     <style>
-        body, html {
+        body {
             margin: 0;
-            padding: 0;
-            height: 100%;
             overflow: hidden;
         }
-        #videoElement {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        canvas {
+            display: block;
         }
     </style>
 </head>
 <body>
-    <video id="videoElement" autoplay></video>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
-        // Access the rear camera
-        navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
-            .then(function (stream) {
-                var video = document.getElementById('videoElement');
-                video.srcObject = stream;
-            })
-            .catch(function (error) {
-                console.error('Error accessing the camera: ', error);
-            });
+        // Set up the scene, camera, and renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 1000); 
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Define the quadratic function
+        function quadraticFunction(x) {
+            return 2*x ** 2 + x - 1;
+        }
+
+        camera.position.set(0, 0, 30); // x, y, z 위치
+
+        // Generate points along the quadratic curve
+        const points = [];
+        for (let x = -4; x <= 5; x += 0.1) {
+            points.push(new THREE.Vector3(x, quadraticFunction(x), 0));
+        }
+
+        // Create a geometry and add the points to it
+        const geometry = new THREE.BufferGeometry().setFromPoints(points);
+
+        // Create a material and set its color
+        const material = new THREE.LineBasicMaterial({ color: 0xff0000 });
+
+        // Create the line and add it to the scene
+        const line = new THREE.Line(geometry, material);
+        scene.add(line);
+
+        // Position the camera
+        camera.position.z = 5;
+
+        // Render the scene
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+        animate();
     </script>
 </body>
 </html>
