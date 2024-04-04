@@ -32,12 +32,22 @@
         z-index: -1; /* Ensure the canvas and video are behind other elements */
        }
        #controller {
-        width: 80%;
         position: absolute;
         bottom: 10px; /* Adjust this value to change the distance from the bottom */
         left: 50%;
         transform: translateX(-50%);
         text-align: center;
+       }
+       @media (max-width: 480px) {
+         #controller input[type="number"] {
+           width: 100px !important;
+           height: 40px !important;
+         }
+
+         #controller button {
+           width: 100px !important;
+           height: 40px !important;
+         }
        }
     </style>
     <script type = "module" src ="./FunctionGraph.js"></script>
@@ -49,12 +59,15 @@
       <video id="videoElement" autoplay></video>
     </div>
     <div id="controller"> 
-      <p>a: <input id="inputA" type="number" value="1" style="width: 30px; height: 20px;">, 
-        b: <input id="inputB" type="number" value="0" style="width: 30px; height: 20px;">, 
-        c: <input id="inputC" type="number" value="0" style="width: 30px; height: 20px;">  
+      <p>
+        a: <input id="inputA" type="text" value="1" style="width: 30px; height: 20px;">, 
+        b: <input id="inputB" type="text" value="0" style="width: 30px; height: 20px;">, 
+        c: <input id="inputC" type="text" value="0" style="width: 30px; height: 20px;">  
       </p>
-      <p> <button id="updateButton"> \[ y=ax^2+bx+c \] 그리기 </button>
-        <button id="updateButton-2"> \[y=a(x-b)^2+c\]그리기 </button></p> 
+      <p>
+        <button id="updateButton"> \[ y=ax^2+bx+c \] 그리기 </button>
+        <button id="updateButton-2"> \[y=a(x-b)^2+c\]그리기 </button>
+      </p> 
     </div>
 
   </body>
