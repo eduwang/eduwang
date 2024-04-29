@@ -38,7 +38,7 @@ const light = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 1);
 scene.add(light);
 
 const myModels = {
-    '4-f': './models/0_volume_of_sphere_CompleteVersion.gltf',
+    '4-f': '../models/0_volume_of_sphere_CompleteVersion.gltf',
 }
 
 let currentModel = '4-f';

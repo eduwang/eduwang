@@ -7,7 +7,7 @@
     <script type="importmap">
       {
         "imports":{
-          "three": "https://unpkg.com/three@v0.153.0/build/three.module.js",
+          "three": "https://unpkg.com/three@v0.127.0/build/three.module.js",
           "three/addons/": "https://unpkg.com/three@v0.153.0/examples/jsm/",
           "mindar-image-three":"https://cdn.jsdelivr.net/npm/mind-ar@1.2.1/dist/mindar-image-three.prod.js"
         }
@@ -29,9 +29,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 80%; 
-        height: 80%;
-        border: 1px solid black;
+        width: 100%; 
+        height: 100%;
         margin: auto;
         position: relative;
       }
@@ -57,20 +56,23 @@
       .vertical-slider {
         width: 30%; /* Width of the slider */
         height: 100px; /* Height of the slider */
-        position: absolute; /* Use absolute positioning */
+        position: fixed; /* Use absolute positioning */
         padding: 0 10px; /* Adjust padding for slider handle */
         left: 10px;
-        transform: translateX(-60%) rotate(-90deg); /* Rotate the slider to vertical */
-        display: none;
+        transform: translateX(-10%) rotate(-90deg); /* Rotate the slider to vertical */
+        display: block;
+        z-index: 998; 
+
       }
       #main-question{
         background-color: aliceblue;
         width: 30%;
         height: 8%;
-        position: absolute; /* Use absolute positioning */
+        position: fixed; /* Use absolute positioning */
         top: 10%;           /* Position 50% from the top */
         left: 50%;          /* Position 50% from the left */
         transform: translate(-50%, -50%);
+        z-index: 999;
       }
     </style>
     <script type = "module" src ="./cav_AR.js"></script>
@@ -87,7 +89,10 @@
       <input id = "slider-panel" type="range" class="vertical-slider" min="0" max="100" value="0" step="0.001">
       <button id="init">실행</button>
       <div id="model-content">
-      </div> -->
+      </div>
+    </div> -->
+    <div id="model-container">
+      <input id = "slider-panel" type="range" class="vertical-slider" min="0" max="100" value="0" step="0.001">
     </div>
   </body>
 </html>

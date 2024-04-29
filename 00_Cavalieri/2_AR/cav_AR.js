@@ -1,6 +1,7 @@
 //const THREE = window.MINDAR.IMAGE.THREE;
 import * as THREE from 'three';
 import {MindARThree} from 'mindar-image-three';
+import {loadGLTF} from '../../applications/libs/loader.js';
 
 document.addEventListener('DOMContentLoaded',() => {
     const start = async () => {
@@ -11,21 +12,35 @@ document.addEventListener('DOMContentLoaded',() => {
         });
         const {renderer, scene, camera} = mindarThree;
 
-        // create AR object
-        const geometry = new THREE.PlaneGeometry(1,1);
-        const material = new THREE.MeshBasicMaterial({color: 0x0000ff, transparent: true, opacity: 0.5});
-        const plane = new THREE.Mesh(geometry,material);
-
-        
+        // create light
+        const light = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 1);
+        scene.add(light);
 
         // create anchor
         const anchor = mindarThree.addAnchor(0);
-        anchor.group.add(plane); //THREE.Group
+        const gltf = await loadGLTF("../models/0_volume_of_sphere_CompleteVersion.gltf");
+        gltf.scene.scale.set(0.3, 0.3, 0.3);
+        gltf.scene.rotation.set(Math.PI/2, -Math.PI/2,0)
+        gltf.scene.position.set(0, 0, 0);
+        anchor.group.add(gltf.scene);
+
+        //gltf.animations
+        const mixer = new THREE.AnimationMixer(gltf.scene);
+        const action = mixer.clipAction(gltf.animations[0]); //첫 번째 애니메이션 실행
+        action.play();
+
+        const clock = new THREE.Clock();
+
+        const sliderController = document.querySelector('#slider-panel');
+
 
         // start AR
         await mindarThree.start();
         renderer.setAnimationLoop(()=>{
+            const delta = clock.getDelta();
             renderer.render(scene, camera);
+            mixer.update(delta); //애니메이션 매 프레임마다 불러오기
+
         });
     }
     start();
