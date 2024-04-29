@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- <meta name ="viewport" content="width=device-width, initial-scale = 1.0"> -->
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+      {
+        "imports":{
+          "three": "https://unpkg.com/three@v0.153.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@v0.153.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+ 
+    <style>
+      html, body {
+        position: relative;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        text-align: center;
+      }
+      #model-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%; 
+        height: 80%;
+        border: 1px solid black;
+        margin: auto;
+        position: relative;
+      }
+      #model-content{
+        display: flex;
+        justify-content: center; /* Horizontally center the child elements */
+        align-items: center;  
+        width: 99%; /* Adjusted width */
+        height: 99%; /* Adjusted height */
+      }
+      #init{
+        width: 100px;
+        height: 100px;
+        display: none;
+        position: absolute; /* Use absolute positioning */
+        top: 50%;           /* Position 50% from the top */
+        left: 50%;          /* Position 50% from the left */
+        transform: translate(-50%, -50%); /* Centering trick */
+      }
+      #buttons{
+        display: inline;
+      }
+      .vertical-slider {
+        width: 30%; /* Width of the slider */
+        height: 100px; /* Height of the slider */
+        position: absolute; /* Use absolute positioning */
+        padding: 0 10px; /* Adjust padding for slider handle */
+        left: 10px;
+        transform: translateX(-60%) rotate(-90deg); /* Rotate the slider to vertical */
+        display: none;
+      
+      }
+    </style>
+    <script type = "module" src ="./cav_sample.js"></script>
+
+  </head>
+
+  <body>
+    <div>
+        <p>구의 부피는 왜 <span class="tex">\(\frac{4}{3}\pi r^{3}\)</span> 일까?
+        </p>
+    </div>
+
+    <div id="model-container">
+      <input id = "slider-panel" type="range" class="vertical-slider" min="0" max="100" value="0" step="0.001">
+      <button id="init">실행</button>
+      <div id="model-content">
+      </div>
+    </div>
+  </body>
+</html>
