@@ -33,6 +33,16 @@ document.addEventListener('DOMContentLoaded',() => {
 
         const sliderController = document.querySelector('#slider-panel');
 
+        anchor.onTargetFound = () => {
+            console.log("on target found");
+            sliderController.style.display = "block";
+        }
+
+        anchor.onTargetLost = () => {
+            console.log("on target lost");
+            sliderController.style.display = "none";
+        }
+
 
         // start AR
         await mindarThree.start();
