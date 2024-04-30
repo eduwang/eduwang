@@ -27,11 +27,25 @@ document.addEventListener('DOMContentLoaded',() => {
         //gltf.animations
         const mixer = new THREE.AnimationMixer(gltf.scene);
         const action = mixer.clipAction(gltf.animations[0]); //첫 번째 애니메이션 실행
-        action.play();
+        const targetTime = gltf.animations[0].duration;
 
         const clock = new THREE.Clock();
 
         const sliderController = document.querySelector('#slider-panel');
+        sliderController.min = 0.02;
+        sliderController.max = targetTime/2;
+        
+        sliderController.addEventListener('input', () => {
+            const sliderValue = parseFloat(sliderController.value);
+            if (mixer) {
+                mixer.setTime(sliderValue); // Set the animation time of the mixer
+                mixer.update(0); // Update the mixer with a delta time of 0 to apply the new animation time
+            }
+            action.play();
+        });
+
+
+
 
         anchor.onTargetFound = () => {
             console.log("on target found");
@@ -43,14 +57,12 @@ document.addEventListener('DOMContentLoaded',() => {
             sliderController.style.display = "none";
         }
 
-
         // start AR
         await mindarThree.start();
         renderer.setAnimationLoop(()=>{
             const delta = clock.getDelta();
             renderer.render(scene, camera);
-            mixer.update(delta); //애니메이션 매 프레임마다 불러오기
-
+            //mixer.update(delta); //애니메이션 매 프레임마다 불러오기
         });
     }
     start();
