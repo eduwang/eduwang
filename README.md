@@ -15,7 +15,5 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-### bone 만들어서 전개도 및 bend 하는 방법 정리
-Object 만들기 -> Bone 만들기 -> Armature Deform with Empty Group -> Assign(Assign 쉽게 하는 방법 찾아보기)
-
+현재 사용 가능한 앱: 사회관계망분석 그래프 시각화 도구, AR 도구
 
